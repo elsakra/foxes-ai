@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 import {
   Gauge,
   LineChart,
@@ -82,7 +83,7 @@ export function ScalePresence() {
               measurement stack, content engine, weekly report. No ramp.
             </p>
           </div>
-          <LinkButton href="/demo" variant="primary" arrow>
+          <LinkButton href={BOOKING_URL} variant="primary" arrow>
             Book a demo
           </LinkButton>
         </div>

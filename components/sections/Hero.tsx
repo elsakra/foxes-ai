@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 import { LinkButton } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { LiveScanPanel } from "@/components/mockups/LiveScanPanel";
-import { MODELS } from "@/lib/copy";
+import { BOOKING_URL, MODELS } from "@/lib/copy";
 import { ModelIcon } from "@/components/mockups/ModelIcon";
 
 export function Hero() {
@@ -63,7 +63,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.18 }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
-              <LinkButton href="/demo" variant="primary" size="lg" arrow>
+              <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
                 Book a demo
               </LinkButton>
               <LinkButton href="/platform" variant="secondary" size="lg">

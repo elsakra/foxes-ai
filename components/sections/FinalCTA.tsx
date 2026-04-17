@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 
 export function FinalCTA() {
   return (
@@ -30,7 +31,7 @@ export function FinalCTA() {
             obligation.
           </p>
           <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
-            <LinkButton href="/demo" variant="primary" size="lg" arrow>
+            <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
               Book a demo
             </LinkButton>
             <LinkButton href="/platform" variant="secondary" size="lg">

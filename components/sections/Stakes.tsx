@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 import { BuyerQuestionStream } from "@/components/mockups/BuyerQuestionStream";
 import { Eyebrow } from "@/components/ui/eyebrow";
 
@@ -45,7 +46,7 @@ export function Stakes() {
         </div>
 
         <div className="mt-10 text-center">
-          <LinkButton href="/demo" variant="primary" size="lg" arrow>
+          <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
             Book a demo — we&apos;ll tell you exactly where you stand
           </LinkButton>
         </div>

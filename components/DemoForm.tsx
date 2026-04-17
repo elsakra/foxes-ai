@@ -2,9 +2,11 @@
 
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Button, LinkButton } from "@/components/ui/button";
 import { Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BOOKING_URL } from "@/lib/copy";
 
 type State = "idle" | "loading" | "success" | "error";
 
@@ -64,20 +66,18 @@ export function DemoForm() {
               We&apos;re on it.
             </h3>
             <p className="mt-3 text-[14.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-md mx-auto">
-              You&apos;ll get a calendar link within one business day, with your
-              audit ready for the call. If you&apos;d rather skip the wait, book
-              a time below.
+              Book a time now — we&apos;ll still prep your audit for the slot you
+              choose.
             </p>
 
-            {/* TODO: Replace with Calendly embed once link is provided */}
-            <div className="mt-8 rounded-xl border border-dashed border-[color:var(--line-strong)] bg-black/20 p-8">
-              <div className="mono text-[10.5px] tracking-widest text-[color:var(--ink-mute)] uppercase">
-                Live calendar · coming soon
-              </div>
-              <p className="mt-2 text-[13.5px] text-[color:var(--ink-dim)]">
-                Your Calendly embed will drop in here.
-              </p>
+            <div className="mt-8 flex justify-center">
+              <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
+                Open Calendly
+              </LinkButton>
             </div>
+            <p className="mt-3 text-[12px] text-[color:var(--ink-mute)]">
+              Opens in a new tab.
+            </p>
           </motion.div>
         ) : (
           <motion.form
@@ -153,6 +153,18 @@ export function DemoForm() {
               we&apos;ll tell you on the call — with data. If we are,
               you&apos;ll see exactly what we&apos;d do in the first 90 days.
               Either way, you keep the report.
+            </p>
+            <p className="text-[12px] text-[color:var(--ink-mute)] pt-2">
+              Prefer to book directly?{" "}
+              <Link
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[color:var(--ink)] underline underline-offset-4 hover:text-[--accent]"
+              >
+                Pick a time on Calendly
+              </Link>
+              .
             </p>
           </motion.form>
         )}

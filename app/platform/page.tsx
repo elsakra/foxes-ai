@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/PageHero";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { MentionRateLine } from "@/components/mockups/MentionRateLine";
@@ -162,7 +163,7 @@ export default function PlatformPage() {
         subtitle="Here's what happens from the day you book a demo through month twelve of an ongoing engagement."
       >
         <div className="flex items-center gap-3 flex-wrap">
-          <LinkButton href="/demo" variant="primary" size="lg" arrow>
+          <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
             Book a demo
           </LinkButton>
           <div className="flex items-center gap-1.5 text-[11.5px] mono text-[color:var(--ink-mute)]">

@@ -59,12 +59,11 @@ lib/
   utils.ts supabase.ts copy.ts
 ```
 
-## Swapping in the Calendly link
+## Calendly booking
 
-`components/DemoForm.tsx` has a clearly-marked placeholder block for the
-Calendly embed. Drop the embed code in when you have the link; the form still
-captures the lead into Supabase so you never miss a contact while the embed is
-being wired up.
+All “Book a demo” CTAs use `BOOKING_URL` in `lib/copy.ts` (Calendly) and open in
+a new tab. The `/demo` page still hosts the lead form plus inline links to the
+same calendar.
 
 ## Company
 

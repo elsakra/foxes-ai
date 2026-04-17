@@ -9,6 +9,10 @@ export const BRAND = {
   email: "contact@foxes.ai",
 };
 
+/** Calendly — used for all “Book a demo” CTAs (opens in a new tab). */
+export const BOOKING_URL =
+  "https://calendly.com/patrizio-foxes/foxes-ai-ai-search-ranking-discovery-call";
+
 export const MODELS = [
   { id: "chatgpt", name: "ChatGPT", short: "GPT", color: "#10A37F" },
   { id: "claude", name: "Claude", short: "Claude", color: "#D97757" },

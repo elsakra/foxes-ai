@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LinkButton } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
+import { BOOKING_URL } from "@/lib/copy";
 
 const links = [
   { href: "/platform", label: "Platform" },
@@ -59,7 +60,7 @@ export function Nav() {
             >
               Sign in
             </Link>
-            <LinkButton href="/demo" variant="primary" size="sm" arrow>
+            <LinkButton href={BOOKING_URL} variant="primary" size="sm" arrow>
               Book a demo
             </LinkButton>
             <button

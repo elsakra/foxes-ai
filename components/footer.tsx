@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui/logo";
+import { BOOKING_URL } from "@/lib/copy";
 
 const cols = [
   {
@@ -29,7 +30,7 @@ const cols = [
       { label: "Results", href: "/results" },
       { label: "Careers", href: "/about#careers" },
       { label: "Contact", href: "mailto:contact@foxes.ai" },
-      { label: "Book a demo", href: "/demo" },
+      { label: "Book a demo", href: BOOKING_URL },
     ],
   },
   {
@@ -38,7 +39,7 @@ const cols = [
       { label: "Blog", href: "/resources" },
       { label: "AEO Guide", href: "/resources#guide" },
       { label: "FAQ", href: "/faq" },
-      { label: "Free Audit", href: "/demo" },
+      { label: "Free Audit", href: BOOKING_URL },
     ],
   },
   {
@@ -64,7 +65,9 @@ export function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-2">
               <Link
-                href="/demo"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="pill hover:text-[color:var(--ink)] transition-colors"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-[--accent] pulse-dot" />
@@ -78,16 +81,27 @@ export function Footer() {
               <div key={col.title}>
                 <div className="eyebrow mb-4">{col.title}</div>
                 <ul className="space-y-2.5">
-                  {col.links.map((l) => (
-                    <li key={l.label}>
-                      <Link
-                        href={l.href}
-                        className="text-[13.5px] text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] transition-colors"
-                      >
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {col.links.map((l) => {
+                    const externalHttps =
+                      typeof l.href === "string" &&
+                      l.href.startsWith("https://");
+                    return (
+                      <li key={l.label}>
+                        <Link
+                          href={l.href}
+                          {...(externalHttps
+                            ? {
+                                target: "_blank" as const,
+                                rel: "noopener noreferrer",
+                              }
+                            : {})}
+                          className="text-[13.5px] text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] transition-colors"
+                        >
+                          {l.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}

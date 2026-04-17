@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/PageHero";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { MentionRateLine } from "@/components/mockups/MentionRateLine";
@@ -65,7 +66,7 @@ export default function ResultsPage() {
         }
         subtitle="Every engagement is measured against one number — how often your brand gets named by ChatGPT, Claude, Perplexity, Gemini, and Copilot on the questions your buyers actually ask."
       >
-        <LinkButton href="/demo" variant="primary" size="lg" arrow>
+        <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
           Book a demo
         </LinkButton>
       </PageHero>

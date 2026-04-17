@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 
 const ERAS = [
   { year: "2005", title: "Search engines", sub: "Own Google's blue links" },
@@ -51,7 +52,7 @@ export function Shift() {
             </div>
 
             <div className="mt-10">
-              <LinkButton href="/demo" variant="secondary" arrow>
+              <LinkButton href={BOOKING_URL} variant="secondary" arrow>
                 Book a demo
               </LinkButton>
             </div>

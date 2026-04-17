@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/PageHero";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { MapPin, Building2 } from "lucide-react";
@@ -138,7 +139,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10">
-              <LinkButton href="/demo" variant="primary" arrow>
+              <LinkButton href={BOOKING_URL} variant="primary" arrow>
                 Book a demo
               </LinkButton>
             </div>

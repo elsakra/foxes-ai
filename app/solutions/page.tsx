@@ -4,6 +4,7 @@ import { LinkButton } from "@/components/ui/button";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BOOKING_URL } from "@/lib/copy";
 
 export const metadata = {
   title: "Solutions",
@@ -68,7 +69,7 @@ export default function SolutionsPage() {
         }
         subtitle="Every engagement is built around the team responsible for the outcome. Here's how we work with different owners."
       >
-        <LinkButton href="/demo" variant="primary" size="lg" arrow>
+        <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
           Book a demo
         </LinkButton>
       </PageHero>
@@ -125,7 +126,7 @@ export default function SolutionsPage() {
 
                 <div className="mt-8">
                   <LinkButton
-                    href="/demo"
+                    href={BOOKING_URL}
                     variant={s.big ? "primary" : "secondary"}
                     size="sm"
                   >

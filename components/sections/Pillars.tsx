@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 import { ShareOfVoiceChart } from "@/components/mockups/ShareOfVoiceChart";
 import { MentionRateLine } from "@/components/mockups/MentionRateLine";
 import { ContentPipelineBoard } from "@/components/mockups/ContentPipelineBoard";
@@ -94,7 +95,7 @@ export function Pillars() {
         </div>
 
         <div className="mt-12 flex items-center gap-3 flex-wrap">
-          <LinkButton href="/demo" variant="primary" size="md" arrow>
+          <LinkButton href={BOOKING_URL} variant="primary" size="md" arrow>
             Book a demo
           </LinkButton>
           <LinkButton href="/platform" variant="ghost" size="md">

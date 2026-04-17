@@ -3,6 +3,7 @@
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { LinkButton } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/copy";
 import { Check } from "lucide-react";
 
 const ITEMS = [
@@ -28,7 +29,7 @@ export function Fit() {
               guesses.
             </p>
             <div className="mt-8">
-              <LinkButton href="/demo" variant="primary" size="lg" arrow>
+              <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
                 Book a demo
               </LinkButton>
             </div>

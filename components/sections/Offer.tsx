@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { LinkButton } from "@/components/ui/button";
 import { AuditReportPreview } from "@/components/mockups/AuditReportPreview";
 import { Check } from "lucide-react";
+import { BOOKING_URL } from "@/lib/copy";
 
 const ITEMS = [
   "Every buyer question your category is being asked across ChatGPT, Claude, Perplexity, Gemini, and Copilot",
@@ -96,7 +97,7 @@ export function Offer() {
 
               <div className="mt-8">
                 <LinkButton
-                  href="/demo"
+                  href={BOOKING_URL}
                   variant="light"
                   size="lg"
                   arrow

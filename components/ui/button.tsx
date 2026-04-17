@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import Link, { type LinkProps } from "next/link";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { ArrowUpRight } from "lucide-react";
@@ -58,16 +58,34 @@ export function Button({
 type LinkButtonProps = React.ComponentPropsWithoutRef<typeof Link> &
   VariantProps<typeof buttonVariants> & { arrow?: boolean };
 
+function isExternalHref(href: LinkProps["href"]): boolean {
+  return typeof href === "string" && /^https?:\/\//i.test(href);
+}
+
 export function LinkButton({
   className,
   variant,
   size,
   arrow,
   children,
-  ...props
+  href,
+  target,
+  rel,
+  ...rest
 }: LinkButtonProps) {
+  const external = isExternalHref(href);
+  const resolvedTarget = external ? target ?? "_blank" : target;
+  const resolvedRel =
+    resolvedTarget === "_blank" ? rel ?? "noopener noreferrer" : rel;
+
   return (
-    <Link className={cn(buttonVariants({ variant, size }), className)} {...props}>
+    <Link
+      className={cn(buttonVariants({ variant, size }), className)}
+      href={href}
+      {...rest}
+      target={resolvedTarget}
+      rel={resolvedRel}
+    >
       {children}
       {arrow && (
         <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
