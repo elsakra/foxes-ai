@@ -101,16 +101,20 @@ export function Pillars() {
           <LinkButton href="/platform" variant="ghost" size="md">
             Explore the platform →
           </LinkButton>
-          <div className="ml-auto flex items-center gap-1.5 text-[11.5px] mono text-[color:var(--ink-mute)]">
-            <span>Running across</span>
+          <div className="ml-auto flex items-center gap-2 text-[11.5px] mono text-[color:var(--ink-mute)]">
+            <span className="mr-1">Running across</span>
             {MODELS.map((m) => (
               <span
                 key={m.id}
                 title={m.name}
-                className="inline-flex h-5 w-5 items-center justify-center rounded-md"
-                style={{ background: `${m.color}18`, color: m.color }}
+                className="inline-flex h-7 w-7 items-center justify-center rounded-lg ring-1 ring-inset"
+                style={{
+                  background: `${m.color}14`,
+                  boxShadow: `inset 0 0 0 1px ${m.color}28`,
+                  color: m.color,
+                }}
               >
-                <ModelIcon id={m.id} className="h-3 w-3" />
+                <ModelIcon id={m.id} className="h-3.5 w-3.5" />
               </span>
             ))}
           </div>
