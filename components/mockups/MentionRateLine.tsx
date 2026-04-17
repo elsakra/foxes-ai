@@ -112,49 +112,59 @@ export function MentionRateLine({
           />
 
           {/* markers */}
-          {POINTS.filter((p) => p.marker).map((p, i) => (
-            <motion.g
-              key={i}
-              initial={{ opacity: 0, scale: 0.6 }}
-              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.4, delay: 0.8 + i * 0.2 }}
-            >
-              <line
-                x1={fx(p.x)}
-                x2={fx(p.x)}
-                y1={fy(p.y) - 6}
-                y2={fy(p.y) - 22}
-                stroke="rgba(255,255,255,0.3)"
-                strokeDasharray="2 2"
-              />
-              <circle cx={fx(p.x)} cy={fy(p.y)} r="4" fill="#FF6B35" />
-              <circle
-                cx={fx(p.x)}
-                cy={fy(p.y)}
-                r="7"
-                fill="rgba(255,107,53,0.18)"
-              />
-              <rect
-                x={fx(p.x) - 60}
-                y={fy(p.y) - 46}
-                width="120"
-                height="22"
-                rx="6"
-                fill="rgba(20,20,24,0.95)"
-                stroke="rgba(255,255,255,0.1)"
-              />
-              <text
-                x={fx(p.x)}
-                y={fy(p.y) - 31}
-                textAnchor="middle"
-                className="fill-[color:var(--ink-dim)]"
-                fontSize="10"
-                fontFamily="var(--font-mono)"
+          {POINTS.filter((p) => p.marker).map((p, i) => {
+            const label = p.marker!;
+            // 10px JetBrains Mono ≈ 6.2px per char; add comfortable padding
+            const charW = 6.2;
+            const padX = 12;
+            const rectW = Math.round(label.length * charW + padX * 2);
+            const rectH = 22;
+            const cx = fx(p.x);
+            // Clamp rect inside chart bounds so labels never clip
+            const minLeft = pad.l + 2;
+            const maxLeft = w - pad.r - rectW - 2;
+            const rectX = Math.max(minLeft, Math.min(cx - rectW / 2, maxLeft));
+            const rectY = fy(p.y) - 46;
+            const textX = rectX + rectW / 2;
+            return (
+              <motion.g
+                key={i}
+                initial={{ opacity: 0, scale: 0.6 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.4, delay: 0.8 + i * 0.2 }}
               >
-                {p.marker}
-              </text>
-            </motion.g>
-          ))}
+                <line
+                  x1={cx}
+                  x2={cx}
+                  y1={fy(p.y) - 6}
+                  y2={fy(p.y) - 22}
+                  stroke="rgba(255,255,255,0.3)"
+                  strokeDasharray="2 2"
+                />
+                <circle cx={cx} cy={fy(p.y)} r="4" fill="#FF6B35" />
+                <circle cx={cx} cy={fy(p.y)} r="7" fill="rgba(255,107,53,0.18)" />
+                <rect
+                  x={rectX}
+                  y={rectY}
+                  width={rectW}
+                  height={rectH}
+                  rx="6"
+                  fill="rgba(20,20,24,0.95)"
+                  stroke="rgba(255,255,255,0.1)"
+                />
+                <text
+                  x={textX}
+                  y={rectY + 15}
+                  textAnchor="middle"
+                  className="fill-[color:var(--ink-dim)]"
+                  fontSize="10"
+                  fontFamily="var(--font-mono)"
+                >
+                  {label}
+                </text>
+              </motion.g>
+            );
+          })}
 
           {/* x axis */}
           {[0, 3, 6, 9, 12].map((v) => (
