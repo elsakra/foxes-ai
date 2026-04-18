@@ -87,18 +87,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.24 }}
-              className="mt-5 text-[13px] sm:text-[14px] leading-snug text-[color:var(--ink)] max-w-xl font-medium"
-            >
-              We&apos;re an agency. You hire us and we do all the work. No
-              software to learn. No dashboards to log into. Just a weekly report
-              in your inbox.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.28 }}
-              className="mt-3 text-[12.5px] text-[color:var(--ink-mute)] max-w-lg"
+              className="mt-5 text-[12.5px] text-[color:var(--ink-mute)] max-w-lg"
             >
               Book a demo and we&apos;ll send you a free report showing how often
               AI recommends your brand. Yours to keep.
