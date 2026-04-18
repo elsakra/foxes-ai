@@ -4,10 +4,13 @@ export const BRAND = {
   name: "Foxes.ai",
   tagline: "The AEO agency",
   domain: "foxes.ai",
+  url: "https://foxes.ai",
   parent: "Lazarus LLC",
   address: "30 N Gould St, Sheridan, WY 82801",
   email: "contact@foxes.ai",
 };
+
+export const SITE_URL = "https://foxes.ai";
 
 /** Calendly — used for all “Book a demo” CTAs (opens in a new tab). */
 export const BOOKING_URL =

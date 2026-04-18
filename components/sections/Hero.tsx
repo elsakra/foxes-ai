@@ -6,11 +6,11 @@ import { LinkButton } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { LiveScanPanel } from "@/components/mockups/LiveScanPanel";
 import { BOOKING_URL, MODELS } from "@/lib/copy";
-import { ModelIcon } from "@/components/mockups/ModelIcon";
+import { ModelIcon, ModelTile } from "@/components/mockups/ModelIcon";
 
 export function Hero() {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-20 overflow-hidden noise">
+    <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 overflow-hidden noise">
       <div aria-hidden className="absolute inset-0 -z-10 hero-glow mask-radial-fade" />
       <div aria-hidden className="absolute inset-0 -z-10 bg-grid mask-radial-fade opacity-60" />
 
@@ -22,20 +22,20 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Eyebrow>The AEO agency</Eyebrow>
+              <Eyebrow>Answer Engine Optimization</Eyebrow>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.05 }}
-              className="headline mt-4 text-[40px] sm:text-[54px] lg:text-[64px] leading-[1.02] tracking-tight"
+              className="headline mt-4 text-[34px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.04] tracking-tight"
             >
-              Win the answer in{" "}
+              Be the answer on{" "}
               <span className="inline-flex items-center gap-1.5 align-baseline">
                 <ModelBadges />
               </span>
-              <span className="text-gradient-accent"> ChatGPT</span>,{" "}
+              <span className="text-gradient-accent">ChatGPT</span>,{" "}
               <span className="text-gradient-accent">Claude</span>,{" "}
               <span className="text-gradient-accent">Perplexity</span>,{" "}
               <span className="text-gradient-accent">Gemini</span>, and{" "}
@@ -53,20 +53,31 @@ export function Hero() {
               don&apos;t get a second chance.
               <br />
               <br />
-              Foxes.ai is the full-service AEO agency that gets your brand into
-              those answers — and keeps you there.
+              Foxes.ai is the team that gets your brand named in those answers
+              — and keeps you there.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.18 }}
-              className="mt-8 flex flex-wrap items-center gap-3"
+              className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3"
             >
-              <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
+              <LinkButton
+                href={BOOKING_URL}
+                variant="primary"
+                size="lg"
+                arrow
+                className="w-full sm:w-auto justify-center"
+              >
                 Book a demo
               </LinkButton>
-              <LinkButton href="/platform" variant="secondary" size="lg">
+              <LinkButton
+                href="/platform"
+                variant="secondary"
+                size="lg"
+                className="w-full sm:w-auto justify-center"
+              >
                 See how it works
               </LinkButton>
             </motion.div>
@@ -77,9 +88,31 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.28 }}
               className="mt-5 text-[12.5px] text-[color:var(--ink-mute)] max-w-lg"
             >
-              Every demo includes a full custom AEO audit of your brand —
-              yours to keep, free, whether we ever work together or not.
+              Every demo includes a full audit of how often AI names your brand
+              — yours to keep, free, whether we ever work together or not.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.34 }}
+              className="mt-8 flex items-center gap-3 flex-wrap"
+            >
+              <span className="mono text-[11.5px] uppercase tracking-[0.14em] text-[color:var(--ink-mute)]">
+                Tracked across
+              </span>
+              <div className="flex items-center gap-2.5">
+                {MODELS.map((m) => (
+                  <ModelTile
+                    key={m.id}
+                    id={m.id}
+                    color={m.color}
+                    size={40}
+                    rounded="xl"
+                  />
+                ))}
+              </div>
+            </motion.div>
           </div>
 
           <motion.div
@@ -97,7 +130,6 @@ export function Hero() {
 }
 
 function ModelBadges() {
-  // Tiny overlapping icon stack — sits in the H1 line, pure decoration.
   return (
     <span
       aria-hidden

@@ -11,13 +11,20 @@ import { CheckCircle2, Clock } from "lucide-react";
 export const metadata = {
   title: "Results",
   description:
-    "The only metric that matters: did your mention rate go up.",
+    "The only number that matters: are you showing up more often in AI answers.",
+  alternates: { canonical: "/results" },
+  openGraph: {
+    title: "Results | Foxes.ai",
+    description:
+      "The only number that matters: are you showing up more often in AI answers.",
+    url: "/results",
+  },
 };
 
 const METHOD = [
   {
     t: "Baseline",
-    b: "On kickoff, we run your full tracked question set across all five models. This is the number every future scan is compared against.",
+    b: "On kickoff, we run your full set of tracked questions across all five AIs. This is the number every future scan is compared against.",
   },
   {
     t: "Weekly tracking",
@@ -25,7 +32,7 @@ const METHOD = [
   },
   {
     t: "Attribution",
-    b: "Every piece of content we ship is tagged to the tracked questions it's designed to influence. When mention rate moves on those questions, we know what moved it.",
+    b: "Every piece of content we ship is tagged to the questions it's designed to influence. When the numbers move, we know what moved them.",
   },
   {
     t: "Reporting",
@@ -36,19 +43,19 @@ const METHOD = [
 const OUTCOMES = [
   {
     range: "30–45 days",
-    title: "First measurable mention-rate lift",
+    title: "First measurable lift in how often you're named",
   },
   {
     range: "90 days",
-    title: "Meaningful movement on 30%+ of tracked gaps",
+    title: "Meaningful movement on 30%+ of tracked questions",
   },
   {
     range: "6–9 months",
-    title: "Share of answer competitive with category leaders",
+    title: "Share of AI answers competitive with category leaders",
   },
   {
     range: "9–18 months",
-    title: "Category default status on priority questions",
+    title: "The default answer on your priority questions",
   },
 ];
 
@@ -59,14 +66,20 @@ export default function ResultsPage() {
         eyebrow="Results"
         title={
           <>
-            The only metric that matters:
+            The only number that matters:
             <br />
-            <span className="text-gradient-accent">did your mention rate go up.</span>
+            <span className="text-gradient-accent">are you being named more often.</span>
           </>
         }
-        subtitle="Every engagement is measured against one number — how often your brand gets named by ChatGPT, Claude, Perplexity, Gemini, and Copilot on the questions your buyers actually ask."
+        subtitle="Every project is measured against one thing — how often your brand gets named by ChatGPT, Claude, Perplexity, Gemini, and Copilot on the questions your buyers actually ask."
       >
-        <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
+        <LinkButton
+          href={BOOKING_URL}
+          variant="primary"
+          size="lg"
+          arrow
+          className="w-full sm:w-auto justify-center"
+        >
           Book a demo
         </LinkButton>
       </PageHero>
@@ -103,7 +116,7 @@ export default function ResultsPage() {
                 <MentionRateLine title="Representative client · 12 weeks" />
               </div>
               <div className="mt-4 card-border p-5 sm:p-7">
-                <ShareOfVoiceChart title="Share of answer · post-engagement" />
+                <ShareOfVoiceChart title="Share of AI answers · after working together" />
               </div>
             </div>
           </div>
@@ -118,10 +131,10 @@ export default function ResultsPage() {
             Real ranges, not guarantees.
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-2xl">
-            In most B2B categories, a typical engagement delivers the following
-            ranges. Your category maturity, competitive density, and content
-            velocity all matter. The demo audit sets honest expectations for
-            your brand specifically.
+            In most B2B categories, typical projects land somewhere in the
+            following ranges. How mature your category is, how crowded the
+            competition is, and how much content we ship all matter. The demo
+            audit sets honest expectations for your brand specifically.
           </p>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -152,23 +165,23 @@ export default function ResultsPage() {
             Published as client results materialize.
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-2xl">
-            Full case studies ship with named-client permission. Reference calls
-            with current clients can be arranged after the demo if useful to
-            your evaluation.
+            Full case studies go up once we have named-client permission.
+            Reference calls with current clients can be arranged after the demo
+            if it helps your evaluation.
           </p>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               {
                 category: "B2B SaaS",
-                before: "8% mention rate",
+                before: "Named in 8% of answers",
                 after: "37% · #2 on ChatGPT",
                 weeks: "Weeks 1–16",
               },
               {
                 category: "Health & wellness",
-                before: "0% visibility · 23/24 prompts",
-                after: "Category default on 7 priority prompts",
+                before: "Invisible on 23 of 24 tracked questions",
+                after: "Default answer on 7 priority questions",
                 weeks: "Weeks 1–20",
               },
               {

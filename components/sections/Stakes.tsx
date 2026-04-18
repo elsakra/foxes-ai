@@ -17,14 +17,16 @@ export function Stakes() {
       />
 
       <Container>
-        <Eyebrow>The stakes</Eyebrow>
+        <div className="flex justify-center">
+          <Eyebrow>The stakes</Eyebrow>
+        </div>
 
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-15%" }}
           transition={{ duration: 0.7 }}
-          className="headline mt-4 text-center text-[38px] sm:text-[56px] lg:text-[72px] leading-[1.02] tracking-tight max-w-5xl mx-auto"
+          className="headline mt-4 text-center text-[32px] sm:text-[44px] md:text-[56px] lg:text-[72px] leading-[1.04] tracking-tight max-w-5xl mx-auto"
         >
           AI is the new shortlist.
           <br />
@@ -33,7 +35,7 @@ export function Stakes() {
           </span>
         </motion.h2>
 
-        <div className="mt-10 max-w-2xl mx-auto text-center text-[15.5px] leading-relaxed text-[color:var(--ink-dim)]">
+        <div className="mt-10 max-w-2xl mx-auto text-center text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] px-2">
           ChatGPT recommends a vendor. Claude suggests three competitors.
           Perplexity cites a comparison article your category leader wrote.
           Gemini names the company that sponsored the right Reddit thread six
@@ -45,9 +47,18 @@ export function Stakes() {
           not — and most will find out too late.
         </div>
 
-        <div className="mt-10 text-center">
-          <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
-            Book a demo — we&apos;ll tell you exactly where you stand
+        <div className="mt-10 flex justify-center px-4">
+          <LinkButton
+            href={BOOKING_URL}
+            variant="primary"
+            size="lg"
+            arrow
+            className="w-full sm:w-auto justify-center whitespace-normal sm:whitespace-nowrap text-center leading-snug"
+          >
+            <span className="hidden sm:inline">
+              Book a demo — see where you stand
+            </span>
+            <span className="sm:hidden">Book a demo</span>
           </LinkButton>
         </div>
 

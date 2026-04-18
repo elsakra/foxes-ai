@@ -8,50 +8,58 @@ import { BOOKING_URL } from "@/lib/copy";
 
 export const metadata = {
   title: "Solutions",
-  description: "AEO, shaped around the team that owns it.",
+  description:
+    "We shape how we work around the team that owns it — whether that's marketing, content, PR, or another agency.",
+  alternates: { canonical: "/solutions" },
+  openGraph: {
+    title: "Solutions | Foxes.ai",
+    description:
+      "We shape how we work around the team that owns it — whether that's marketing, content, PR, or another agency.",
+    url: "/solutions",
+  },
 };
 
 const SOLUTIONS = [
   {
     id: "aeo",
-    eyebrow: "For AEO Teams",
-    title: "Senior strategy + production leverage",
+    eyebrow: "For AEO / search teams",
+    title: "Senior strategy + a production team",
     body:
-      "You already have AEO on someone's plate. We act as the senior strategy layer and the production engine. You own direction; we run measurement, produce content, and report on lift. Your team gets leverage without hiring.",
-    keywords: ["Strategy layer", "Production engine", "Weekly measurement"],
+      "You already have AEO on someone's plate. We act as the senior strategy layer and the production team. You own direction; we run the tracking, produce the content, and report on what moved. Your team gets leverage without hiring.",
+    keywords: ["Strategy", "Production", "Weekly tracking"],
     big: true,
   },
   {
     id: "content",
-    eyebrow: "For Content Teams",
-    title: "The AEO intelligence layer on top of your calendar",
+    eyebrow: "For content teams",
+    title: "An AI-visibility layer on top of your editorial calendar",
     body:
-      "Content is already producing work and you want it to win AEO. We plug into your editorial calendar, add the AEO intelligence layer, and either produce new content or optimize what you're already making.",
-    keywords: ["Editorial integration", "AEO intelligence", "Optimization"],
+      "Your content team is already producing great work — and you want it to win in AI answers too. We plug into your calendar, add the AI visibility layer, and either produce new content or rework what you're already making.",
+    keywords: ["Editorial partnership", "AI visibility", "Optimization"],
   },
   {
     id: "pr",
-    eyebrow: "For PR & Brand Teams",
-    title: "Authority, citations, narrative architecture",
+    eyebrow: "For PR & brand teams",
+    title: "Authority, placements, how AI describes your category",
     body:
-      "Your win condition is brand narrative in AI. We focus the engagement on the authority layer — third-party placements, expert positioning, media citations, and the narrative architecture that shows up when AI describes your category.",
-    keywords: ["Citations", "Placements", "Narrative"],
+      "Your win condition is brand narrative in AI. We focus on authority — third-party placements, expert positioning, media mentions, and the story AI tells when it describes your category.",
+    keywords: ["Placements", "Authority", "Narrative"],
   },
   {
     id: "leaders",
-    eyebrow: "For In-House Marketing Leaders",
-    title: "AEO as a managed function — no ramp",
+    eyebrow: "For in-house marketing leaders",
+    title: "AI visibility as a function — no six-month ramp",
     body:
-      "You own the full marketing org and want AEO as a function. We run it end-to-end as a managed service — measurement, strategy, content engine, reporting — without the six-month build-out.",
-    keywords: ["End-to-end", "Managed service", "No six-month ramp"],
+      "You own the full marketing org and want AI visibility as a function. We run it end-to-end — tracking, strategy, content, reporting — without the six-month build-out.",
+    keywords: ["End-to-end", "Managed", "Fast start"],
   },
   {
     id: "agencies",
-    eyebrow: "For Agencies (white-label)",
+    eyebrow: "For agencies (white-label)",
     title: "White-label AEO, under your brand",
     body:
-      "You run a marketing or SEO agency and your clients are asking about AEO. We white-label measurement and content production so you can offer AEO without building the capability in-house.",
-    keywords: ["White-label", "Measurement + content", "Your brand"],
+      "You run a marketing or SEO agency and your clients are asking about AI. We white-label the tracking and content so you can offer it without building the capability in-house.",
+    keywords: ["White-label", "Tracking + content", "Your brand"],
   },
 ];
 
@@ -67,9 +75,15 @@ export default function SolutionsPage() {
             <span className="text-gradient-accent">that owns it.</span>
           </>
         }
-        subtitle="Every engagement is built around the team responsible for the outcome. Here's how we work with different owners."
+        subtitle="Every project is built around the team responsible for the outcome. Here's how we work with different owners."
       >
-        <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
+        <LinkButton
+          href={BOOKING_URL}
+          variant="primary"
+          size="lg"
+          arrow
+          className="w-full sm:w-auto justify-center"
+        >
           Book a demo
         </LinkButton>
       </PageHero>

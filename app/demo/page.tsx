@@ -10,7 +10,14 @@ import { ModelIcon } from "@/components/mockups/ModelIcon";
 export const metadata = {
   title: "Book a demo",
   description:
-    "30 minutes. A custom audit of your brand. Yours to keep.",
+    "30 minutes. A custom audit of how often AI names your brand. Yours to keep.",
+  alternates: { canonical: "/demo" },
+  openGraph: {
+    title: "Book a demo | Foxes.ai",
+    description:
+      "30 minutes. A custom audit of how often AI names your brand. Yours to keep.",
+    url: "/demo",
+  },
 };
 
 const TRUST = [
@@ -34,7 +41,7 @@ export default function DemoPage() {
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6">
               <Eyebrow>Book a demo</Eyebrow>
-              <h1 className="headline mt-4 text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.04] tracking-tight">
+              <h1 className="headline mt-4 text-[32px] sm:text-[44px] md:text-[52px] lg:text-[60px] leading-[1.04] tracking-tight">
                 30 minutes. A custom audit of your brand.
                 <br />
                 <span className="text-gradient-accent">Yours to keep.</span>
@@ -105,8 +112,8 @@ export default function DemoPage() {
                 A preview of what lands in your inbox.
               </h2>
               <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-xl">
-                Typically 20–40 pages of custom analysis. The same deliverable
-                our paid engagements kick off with.
+                Usually 20–40 pages of custom analysis. The same report our
+                paid clients get at kickoff.
               </p>
               <div className="mt-8">
                 <Link

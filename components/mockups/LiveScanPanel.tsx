@@ -111,7 +111,7 @@ export function LiveScanPanel({
           </div>
         }
       >
-        <div className="grid grid-cols-12 min-h-[460px]">
+        <div className="grid grid-cols-12 min-h-[460px] sm:min-h-[520px]">
           {/* Left rail: models */}
           <div className="col-span-4 sm:col-span-3 border-r border-[color:var(--line)] p-3 space-y-1">
             <div className="eyebrow px-2 py-1.5 mb-1">Models</div>
@@ -150,16 +150,16 @@ export function LiveScanPanel({
 
             <div className="mt-4 rounded-lg border border-[color:var(--line)] p-3 bg-black/20">
               <div className="flex items-center justify-between">
-                <span className="eyebrow">Mention rate</span>
+                <span className="eyebrow">Named in answer</span>
                 <span className="mono text-[11px] text-[color:var(--success)]">+12.4%</span>
               </div>
-              <div className="mt-2 font-display text-[28px] leading-none tracking-tight">
+              <div className="mt-2 font-display text-[28px] leading-none tracking-tight tabular-nums min-h-[28px]">
                 <motion.span
                   key={mentionRate}
                   initial={{ y: 8, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.35 }}
-                  className="inline-block"
+                  className="inline-block min-w-[48px]"
                 >
                   {mentionRate}
                 </motion.span>
@@ -201,8 +201,8 @@ export function LiveScanPanel({
                   &ldquo;{step.question}&rdquo;
                 </div>
 
-                <div className="mt-5 rounded-xl border border-[color:var(--line)] bg-black/20 p-4 relative overflow-hidden">
-                  <div className="flex items-center justify-between mb-3">
+                <div className="mt-5 rounded-xl border border-[color:var(--line)] bg-black/20 p-4 relative overflow-hidden min-h-[220px]">
+                  <div className="flex items-center justify-between mb-3 gap-2 flex-wrap">
                     <div className="flex items-center gap-2">
                       <span
                         className="inline-flex h-6 w-6 items-center justify-center rounded-md"
@@ -240,7 +240,7 @@ export function LiveScanPanel({
                     </div>
                   </div>
 
-                  <p className="text-[13.5px] leading-relaxed text-[color:var(--ink-dim)]">
+                  <p className="text-[13.5px] leading-relaxed text-[color:var(--ink-dim)] min-h-[84px]">
                     <Typewriter text={step.excerpt} key={i} />
                   </p>
 

@@ -13,7 +13,7 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 overflow-hidden noise">
+    <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-16 overflow-hidden noise">
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(255,107,53,0.2),transparent_70%)]"
@@ -22,7 +22,7 @@ export function PageHero({
       <Container>
         <div className="max-w-3xl">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="headline mt-4 text-[40px] sm:text-[56px] lg:text-[64px] leading-[1.02] tracking-tight">
+          <h1 className="headline mt-4 text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] leading-[1.04] tracking-tight">
             {title}
           </h1>
           {subtitle && (

@@ -10,24 +10,31 @@ export const metadata = {
   title: "About",
   description:
     "We built Foxes.ai because the layer between buyers and brands just shifted. Again.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | Foxes.ai",
+    description:
+      "We built Foxes.ai because the layer between buyers and brands just shifted. Again.",
+    url: "/about",
+  },
 };
 
 const PRINCIPLES = [
   {
     t: "Opinionated, not prescriptive",
-    b: "We have a point of view on what works in AEO right now. We'll push back on asks that won't move the needle. That's what you're paying us for.",
+    b: "We have a point of view on what works in AI answers right now. We'll push back on asks that won't move the needle. That's what you're paying us for.",
   },
   {
     t: "Done, not enabled",
-    b: "The agencies that win in an operating category ship the work. The ones that hand you a framework and vanish don't. We ship.",
+    b: "Teams that win in a working category ship the work. The ones that hand you a framework and vanish don't. We ship.",
   },
   {
     t: "Honest numbers",
-    b: "The only report that counts is whether your mention rate went up. We don't dress up vanity metrics.",
+    b: "The only report that counts is whether you're showing up more often in AI answers. We don't dress up vanity metrics.",
   },
   {
     t: "Calm, senior team",
-    b: "Every account is led by people with a decade-plus in B2B marketing, SEO, and content. You'll know who's on your account and they don't disappear after kickoff.",
+    b: "Every account is led by people with a decade-plus in B2B marketing, SEO, and content. You'll know everyone working on your account, and they don't disappear after kickoff.",
   },
 ];
 
@@ -43,7 +50,7 @@ export default function AboutPage() {
             <span className="text-gradient-accent">just shifted. Again.</span>
           </>
         }
-        subtitle="The teams that figured out SEO in 2005 locked in a decade of advantage. Content marketing in 2012. Social in 2015. AEO is the same inflection point, and most brands are sleeping through it. We're not."
+        subtitle="The teams that figured out SEO in 2005 locked in a decade of advantage. Content marketing in 2012. Social in 2015. AI answers are the same kind of moment, and most brands are sleeping through it. We're not."
       />
 
       {/* Thesis */}
@@ -139,7 +146,12 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-10">
-              <LinkButton href={BOOKING_URL} variant="primary" arrow>
+              <LinkButton
+                href={BOOKING_URL}
+                variant="primary"
+                arrow
+                className="w-full sm:w-auto justify-center"
+              >
                 Book a demo
               </LinkButton>
             </div>

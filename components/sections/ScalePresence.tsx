@@ -18,45 +18,45 @@ import { cn } from "@/lib/utils";
 
 const CAPS = [
   {
-    title: "Query engineering",
-    body: "Translating your category into the real questions buyers ask AI",
+    title: "Buyer questions, mapped",
+    body: "We turn your category into the real questions your buyers type into AI — not keyword lists from an SEO tool.",
     icon: Search,
     className: "lg:col-span-3 lg:row-span-2",
     big: true,
   },
   {
-    title: "Multi-LLM measurement",
-    body: "ChatGPT, Claude, Perplexity, Gemini, Copilot, weekly",
+    title: "Tracked across every major AI",
+    body: "ChatGPT, Claude, Perplexity, Gemini, and Copilot. Scanned weekly.",
     icon: Gauge,
     className: "lg:col-span-3",
   },
   {
     title: "Competitive intelligence",
-    body: "Who's being named, why, and what to do about it",
+    body: "Who's getting named, why, and what to do about it.",
     icon: BarChart3,
     className: "lg:col-span-3",
   },
   {
     title: "Content production",
-    body: "Comparison pages, long-form, help docs, video, Reddit presence",
+    body: "Comparison pages, long-form answers, help docs, video, Reddit presence.",
     icon: PenTool,
     className: "lg:col-span-3",
   },
   {
     title: "Authority building",
-    body: "Citations, placements, third-party signals",
+    body: "Reviews, placements, podcasts, expert roundups — the sources AI trusts.",
     icon: Link2,
     className: "lg:col-span-3",
   },
   {
-    title: "Technical AEO",
-    body: "Schema, structured data, crawl posture for AI agents",
+    title: "Site setup for AI",
+    body: "Schema, structured data, and making sure AI crawlers can read your site.",
     icon: Cpu,
     className: "lg:col-span-3",
   },
   {
     title: "Weekly reporting",
-    body: "One number, tracked honestly",
+    body: "One honest number: are you showing up more often?",
     icon: LineChart,
     className: "lg:col-span-3",
   },
@@ -69,21 +69,27 @@ export function ScalePresence() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div className="max-w-2xl">
             <Eyebrow>Done for you</Eyebrow>
-            <h2 className="headline mt-4 text-[34px] sm:text-[48px] leading-[1.05] tracking-tight">
+            <h2 className="headline mt-4 text-[30px] sm:text-[40px] md:text-[48px] leading-[1.05] tracking-tight">
               Scale your AI visibility. Not your headcount.
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)]">
-              Running AEO in-house means hiring a senior strategist, a
-              research analyst, two content producers, a technical SEO for the
-              structured data layer, and buying a measurement tool. Six months
-              before you ship the first thing.
+              Doing this in-house means hiring a senior strategist, a research
+              analyst, two writers, a technical SEO for the behind-the-scenes
+              site setup, and buying a measurement tool. Six months before you
+              ship the first thing.
               <br />
               <br />
               Or you book a demo with us and we run all of it. Senior-led team,
-              measurement stack, content engine, weekly report. No ramp.
+              tracking already live, content engine humming, weekly report in
+              your inbox. No ramp.
             </p>
           </div>
-          <LinkButton href={BOOKING_URL} variant="primary" arrow>
+          <LinkButton
+            href={BOOKING_URL}
+            variant="primary"
+            arrow
+            className="w-full sm:w-auto justify-center"
+          >
             Book a demo
           </LinkButton>
         </div>

@@ -9,8 +9,8 @@ import { Check } from "lucide-react";
 const ITEMS = [
   "You sell B2B and your buyers research before they buy",
   "You have a real product, real customers, and substance worth being cited for",
-  "You rank fine on Google but you're nowhere in AI answers — and you can feel the pipeline shift",
-  "You'd rather hire an agency that ships than build a team from scratch",
+  "You rank fine on Google, but you're nowhere in AI answers — and you can feel buyers moving to AI",
+  "You'd rather hire a team that ships than build one from scratch",
 ];
 
 export function Fit() {
@@ -20,16 +20,22 @@ export function Fit() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5">
             <Eyebrow>Fit</Eyebrow>
-            <h2 className="headline mt-4 text-[34px] sm:text-[46px] leading-[1.05] tracking-tight">
+            <h2 className="headline mt-4 text-[30px] sm:text-[40px] md:text-[46px] leading-[1.05] tracking-tight">
               Best fit if:
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-xl">
-              We turn down engagements where we can&apos;t move the needle. The
+              We say no to projects where we can&apos;t move the needle. The
               demo call is how we both figure that out — with real data, not
               guesses.
             </p>
             <div className="mt-8">
-              <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
+              <LinkButton
+                href={BOOKING_URL}
+                variant="primary"
+                size="lg"
+                arrow
+                className="w-full sm:w-auto justify-center"
+              >
                 Book a demo
               </LinkButton>
             </div>

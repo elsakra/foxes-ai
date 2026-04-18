@@ -28,16 +28,16 @@ const cols = [
     links: [
       { label: "About", href: "/about" },
       { label: "Results", href: "/results" },
-      { label: "Careers", href: "/about#careers" },
-      { label: "Contact", href: "mailto:contact@foxes.ai" },
+      { label: "Careers", href: "/careers" },
+      { label: "Contact", href: "/contact" },
       { label: "Book a demo", href: BOOKING_URL },
     ],
   },
   {
     title: "Resources",
     links: [
+      { label: "AEO Guide", href: "/aeo-guide" },
       { label: "Blog", href: "/resources" },
-      { label: "AEO Guide", href: "/resources#guide" },
       { label: "FAQ", href: "/faq" },
       { label: "Free Audit", href: BOOKING_URL },
     ],

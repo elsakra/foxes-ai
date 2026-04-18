@@ -2,22 +2,22 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ArrowRight } from "lucide-react";
 
-const QS = [
+export const QS = [
   {
     q: "Is there really no catch with the free audit?",
-    a: "No. We run the audit before every demo because it's the only honest way to have the conversation. You keep the report regardless of what happens next.",
+    a: "No. We run the audit before every demo because it's the only honest way to have the conversation. You keep the report no matter what happens next.",
   },
   {
-    q: "How is this different from an AEO tool we could buy?",
-    a: "Tools tell you what's wrong. We fix it. Most AEO tools end up with someone on your team logging in, seeing a gap list, feeling overwhelmed, and never logging in again. We run the measurement and produce the content.",
+    q: "How is this different from software for this?",
+    a: "Tools tell you what's wrong. We actually fix it. Most tools end up with someone on your team logging in, seeing a long to-do list, feeling overwhelmed, and never logging in again. We run the tracking and produce the content.",
   },
   {
     q: "How quickly do results show?",
-    a: "Most clients see measurable mention-rate lift within 30–60 days of content shipping. We report weekly.",
+    a: "Most clients see more mentions in AI answers within 30–60 days of content shipping. We report weekly.",
   },
   {
     q: "How is this different from SEO?",
-    a: "Different channel, different signals, different formats. SEO optimizes for Google's ranking algorithm. AEO optimizes for what ChatGPT, Claude, Perplexity, Gemini, and Copilot cite when they generate answers. Some overlap, but the wins come from different work.",
+    a: "Different channel, different signals, different formats. SEO optimizes for Google's ranking. We optimize for what ChatGPT, Claude, Perplexity, Gemini, and Copilot cite when they answer. Some overlap, but the wins come from different work.",
   },
 ];
 
@@ -26,7 +26,7 @@ export function FAQTeaser() {
     <section className="relative py-28 border-t border-[color:var(--line)]">
       <Container>
         <div className="mb-12 flex items-end justify-between gap-6">
-          <h2 className="headline text-[32px] sm:text-[42px] leading-[1.05] tracking-tight">
+          <h2 className="headline text-[28px] sm:text-[36px] md:text-[42px] leading-[1.05] tracking-tight">
             Frequently asked.
           </h2>
           <Link

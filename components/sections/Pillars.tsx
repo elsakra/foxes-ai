@@ -17,14 +17,14 @@ export function Pillars() {
     <section className="relative py-28 border-t border-[color:var(--line)]">
       <Container size="wide">
         <div className="max-w-3xl">
-          <Eyebrow>The full stack AEO agency</Eyebrow>
-          <h2 className="headline mt-4 text-[34px] sm:text-[46px] leading-[1.05] tracking-tight">
+          <Eyebrow>End-to-end, done for you</Eyebrow>
+          <h2 className="headline mt-4 text-[30px] sm:text-[40px] md:text-[46px] leading-[1.05] tracking-tight">
             Own the AI answer. We handle every surface.
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-xl">
             Getting named by AI isn&apos;t one thing. It&apos;s content the
-            models cite, platforms they trust, signals they read, and a
-            measurement loop that proves it&apos;s working. We run all of it.
+            models cite, platforms they trust, signals they read, and a weekly
+            check that shows what&apos;s working. We run all of it.
           </p>
         </div>
 
@@ -33,12 +33,12 @@ export function Pillars() {
           <PillarCard
             title="Measurement"
             eyebrow="01"
-            body="We query ChatGPT, Claude, Perplexity, Gemini, and Copilot directly — not SERP scrapes — on the real questions your buyers ask. Weekly scans. Full competitor benchmarking. Your mention rate, tracked."
+            body="We ask the real ChatGPT, Claude, Perplexity, Gemini, and Copilot the questions your buyers actually type — not recycled Google results. Weekly scans, full competitor benchmarking, and a clear number: how often AI names you."
             className="lg:col-span-4"
             accent
           >
             <div className="mt-6 rounded-xl border border-[color:var(--line)] bg-black/20 p-4">
-              <ShareOfVoiceChart title="Your category · share of answer" />
+              <ShareOfVoiceChart title="Your category · share of AI answers" />
             </div>
           </PillarCard>
 
@@ -46,13 +46,13 @@ export function Pillars() {
           <PillarCard
             title="Authority"
             eyebrow="03"
-            body="We build the citation footprint AI relies on — G2, Capterra, industry publications, podcasts, expert roundups — so when the model goes looking for a trusted source, it finds you."
+            body="We build the trusted sources AI pulls from — G2, Capterra, industry publications, podcasts, expert roundups — so when a model goes looking for a reliable name, it finds you."
             className="lg:col-span-2"
           >
             <div className="mt-6 space-y-2">
               {[
-                "G2 — Answer Engine Optimization · category page",
-                "Capterra — Side-by-side breakdown",
+                "G2 — category page, optimized for AI answers",
+                "Capterra — side-by-side breakdown",
                 "Reddit — r/marketing top-cited reply",
                 "Podcast — Modern GTM · ep. 142",
                 "Expert roundup — Search Engine Land",
@@ -72,7 +72,7 @@ export function Pillars() {
           <PillarCard
             title="Content"
             eyebrow="02"
-            body="We produce the comparison pages, long-form answers, help docs, Reddit presence, YouTube scripts, and third-party placements the models actually pull from. Under your brand, through your review."
+            body="We produce the comparison pages, long-form answers, help docs, Reddit replies, YouTube scripts, and third-party write-ups that models actually pull from. Under your brand, through your review."
             className="lg:col-span-3"
           >
             <div className="mt-6">
@@ -84,12 +84,12 @@ export function Pillars() {
           <PillarCard
             title="Reporting"
             eyebrow="04"
-            body="One number that matters: did your mention rate go up. We report it weekly. Flat months get the same honest conversation as up months."
+            body="One number that matters: are you showing up more often. We report it weekly. Flat months get the same honest conversation as up months."
             className="lg:col-span-3"
             accent
           >
             <div className="mt-6">
-              <MentionRateLine title="Weekly mention rate · Acme" />
+              <MentionRateLine title="Weekly share of AI answers · Acme" />
             </div>
           </PillarCard>
         </div>

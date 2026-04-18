@@ -3,6 +3,12 @@ import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import {
+  StructuredData,
+  organizationSchema,
+  websiteSchema,
+} from "@/components/seo/StructuredData";
+import { BRAND, SITE_URL } from "@/lib/copy";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -32,26 +38,54 @@ const _serif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://foxes.ai"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Foxes.ai — The AEO agency",
+    default: "Foxes.ai — Answer Engine Optimization agency",
     template: "%s · Foxes.ai",
   },
   description:
-    "Foxes.ai is the full-service AEO agency that gets your brand named by ChatGPT, Claude, Perplexity, Gemini, and Copilot — and keeps you there.",
+    "Foxes.ai is the full-service Answer Engine Optimization (AEO) agency that gets your brand named by ChatGPT, Claude, Perplexity, Gemini, and Copilot — and keeps you there.",
+  applicationName: BRAND.name,
+  keywords: [
+    "AEO",
+    "Answer Engine Optimization",
+    "AEO agency",
+    "ChatGPT SEO",
+    "Perplexity SEO",
+    "AI search optimization",
+    "generative engine optimization",
+    "GEO",
+    "LLM visibility",
+    "brand mentions in AI",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Foxes.ai — The AEO agency",
+    title: "Foxes.ai — Answer Engine Optimization agency",
     description:
-      "Win the answer in ChatGPT, Claude, Perplexity, Gemini, and Copilot.",
-    url: "https://foxes.ai",
+      "Be the answer on ChatGPT, Claude, Perplexity, Gemini, and Copilot.",
+    url: SITE_URL,
     siteName: "Foxes.ai",
     type: "website",
+    images: ["/opengraph-image.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Foxes.ai — The AEO agency",
+    title: "Foxes.ai — Answer Engine Optimization agency",
     description:
-      "Win the answer in ChatGPT, Claude, Perplexity, Gemini, and Copilot.",
+      "Be the answer on ChatGPT, Claude, Perplexity, Gemini, and Copilot.",
+    images: ["/opengraph-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: [{ url: "/icon.png", type: "image/png" }],
@@ -68,6 +102,21 @@ export default function RootLayout({
       className={`${inter.variable} ${display.variable} ${mono.variable} ${_serif.variable}`}
     >
       <body className="min-h-screen antialiased overflow-x-hidden">
+        <StructuredData
+          id="ld-organization"
+          data={organizationSchema({
+            name: BRAND.name,
+            url: SITE_URL,
+            logo: `${SITE_URL}/brand/icon.png`,
+            parent: BRAND.parent,
+            address: BRAND.address,
+            email: BRAND.email,
+          })}
+        />
+        <StructuredData
+          id="ld-website"
+          data={websiteSchema({ name: BRAND.name, url: SITE_URL })}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-black focus:px-3 focus:py-2 focus:text-white"

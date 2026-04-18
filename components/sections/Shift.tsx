@@ -20,9 +20,9 @@ export function Shift() {
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
             <Eyebrow>Why this matters now</Eyebrow>
-            <h2 className="headline mt-4 text-[32px] sm:text-[42px] leading-[1.08] tracking-tight">
-              The brands that figured out SEO in 2005 owned a decade. AEO is
-              the same inflection point.
+            <h2 className="headline mt-4 text-[28px] sm:text-[36px] md:text-[42px] leading-[1.08] tracking-tight">
+              The brands that figured out SEO in 2005 owned a decade. Showing
+              up in AI answers is the same kind of moment.
             </h2>
           </div>
           <div className="lg:col-span-7">

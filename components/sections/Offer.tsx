@@ -8,12 +8,12 @@ import { Check } from "lucide-react";
 import { BOOKING_URL } from "@/lib/copy";
 
 const ITEMS = [
-  "Every buyer question your category is being asked across ChatGPT, Claude, Perplexity, Gemini, and Copilot",
-  "Your current mention rate across all five models, broken down by question type and funnel stage",
+  "Every question your buyers are typing into ChatGPT, Claude, Perplexity, Gemini, and Copilot about your category",
+  "How often you're named across all five, broken down by early-stage vs late-stage buyer questions",
   "Your top 5 competitors' mention rates — who's winning, where, and why",
-  "The specific surfaces the models are pulling from in your category (Reddit, G2, comparison pages, YouTube, niche pubs — it varies wildly)",
-  "A prioritized gap list ranked by buyer intent and fix difficulty",
-  "The first three content plays we'd ship in the first 30 days",
+  "The exact sources each model is pulling from in your category (Reddit, G2, comparison pages, YouTube, niche publications — it varies wildly)",
+  "A short list of fixes, ranked by impact and effort",
+  "The first three pieces of content we'd ship in the first 30 days",
 ];
 
 export function Offer() {
@@ -46,16 +46,16 @@ export function Offer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="headline mt-3 text-[36px] sm:text-[48px] leading-[1.05] tracking-tight"
+                className="headline mt-3 text-[30px] sm:text-[40px] md:text-[48px] leading-[1.05] tracking-tight"
               >
                 The audit we charge paid clients for — <span className="text-[#B84700]">yours free</span>.
               </motion.h2>
 
               <p className="mt-5 text-[15.5px] leading-relaxed text-black/75 max-w-xl">
-                Before every demo, we run our full AEO audit on your brand.
-                It&apos;s the same deliverable our paid engagements kick off
-                with. On the call, we walk you through it live. You leave with
-                the full report.
+                Before every demo, we run a full audit of your AI visibility.
+                It&apos;s the same report we give paid clients at kickoff. On
+                the call, we walk you through it live. You leave with the full
+                thing.
               </p>
 
               <div className="mt-8 mono text-[11px] tracking-widest text-black/55 uppercase">
@@ -101,7 +101,7 @@ export function Offer() {
                   variant="light"
                   size="lg"
                   arrow
-                  className="!bg-black !text-white hover:!bg-black/90"
+                  className="!bg-black !text-white hover:!bg-black/90 w-full sm:w-auto justify-center"
                 >
                   Book a demo — audit included
                 </LinkButton>

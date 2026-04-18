@@ -22,19 +22,30 @@ export function FinalCTA() {
           transition={{ duration: 0.7 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="headline text-[38px] sm:text-[56px] lg:text-[64px] leading-[1.02] tracking-tight">
+          <h2 className="headline text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] leading-[1.04] tracking-tight">
             See exactly where your brand stands in <span className="text-gradient-accent">AI answers</span>.
           </h2>
-          <p className="mt-6 text-[16px] leading-relaxed text-[color:var(--ink-dim)] max-w-2xl mx-auto">
+          <p className="mt-6 text-[16px] leading-relaxed text-[color:var(--ink-dim)] max-w-2xl mx-auto px-2">
             Book a 30-minute call. We&apos;ll run the audit before we meet and
             walk you through it live. Full report, yours to keep, zero
             obligation.
           </p>
-          <div className="mt-10 flex items-center justify-center gap-3 flex-wrap">
-            <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
+          <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 px-4">
+            <LinkButton
+              href={BOOKING_URL}
+              variant="primary"
+              size="lg"
+              arrow
+              className="w-full sm:w-auto justify-center"
+            >
               Book a demo
             </LinkButton>
-            <LinkButton href="/platform" variant="secondary" size="lg">
+            <LinkButton
+              href="/platform"
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto justify-center"
+            >
               See how it works
             </LinkButton>
           </div>

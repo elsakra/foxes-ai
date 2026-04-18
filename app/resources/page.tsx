@@ -1,105 +1,168 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { ArrowUpRight, BookOpen, BarChart3, Newspaper, FileBarChart2 } from "lucide-react";
-import Link from "next/link";
+import {
+  ArrowUpRight,
+  BookOpen,
+  BarChart3,
+  FileBarChart2,
+  Wrench,
+} from "lucide-react";
+import { POSTS, categoryLabel, type PostCategory } from "@/lib/posts";
 import { cn } from "@/lib/utils";
 
 export const metadata = {
   title: "Resources",
-  description: "What we're learning about winning the answer.",
+  description:
+    "Guides, research, and teardowns about showing up in AI answers — written for the people doing the work.",
+  alternates: { canonical: "/resources" },
+  openGraph: {
+    title: "Resources | Foxes.ai",
+    description:
+      "Guides, research, and teardowns about showing up in AI answers — written for the people doing the work.",
+    url: "/resources",
+  },
 };
 
-const CATS = [
+const CATS: {
+  id: PostCategory | "guide-link";
+  icon: typeof BookOpen;
+  title: string;
+  body: string;
+  href: string;
+}[] = [
   {
-    id: "guides",
+    id: "guide-link",
     icon: BookOpen,
+    title: "The AEO Guide",
+    body: "The cornerstone guide to getting named in AI answers.",
+    href: "/aeo-guide",
+  },
+  {
+    id: "guide",
+    icon: Wrench,
     title: "Guides",
-    body: "Deep how-tos on AEO concepts",
+    body: "How-tos and fundamentals on AEO, from the people running it.",
+    href: "#guides",
   },
   {
     id: "research",
     icon: BarChart3,
     title: "Research",
-    body: "What we're seeing in client data (aggregated, anonymized)",
+    body: "What we're seeing in client data (aggregated, anonymized).",
+    href: "#research",
   },
   {
-    id: "case-studies",
-    icon: Newspaper,
-    title: "Case studies",
-    body: "Published as results materialize with client permission",
-  },
-  {
-    id: "reports",
+    id: "teardown",
     icon: FileBarChart2,
-    title: "Category reports",
-    body: "\"State of AEO\" for specific verticals",
+    title: "Teardowns",
+    body: "Anonymized deep dives into brands winning (or losing) AI answers.",
+    href: "#teardowns",
   },
 ];
 
-const PREVIEW_POSTS = [
-  {
-    cat: "Guide",
-    title: "The AEO Content Formats That Actually Get Cited",
-    read: "12 min read",
-    tag: "Fundamentals",
-  },
-  {
-    cat: "Research",
-    title: "What ChatGPT, Claude, and Perplexity Trust in Health & Wellness",
-    read: "9 min read",
-    tag: "Category analysis",
-  },
-  {
-    cat: "Guide",
-    title: "Writing for Extraction: Answer-First Content, Properly Structured",
-    read: "7 min read",
-    tag: "Fundamentals",
-  },
-  {
-    cat: "Research",
-    title: "The Top 20 Citation Sources in B2B SaaS, Ranked",
-    read: "11 min read",
-    tag: "Data",
-  },
-  {
-    cat: "Guide",
-    title: "Schema & Structured Data Every B2B Brand Should Have Shipped Yesterday",
-    read: "14 min read",
-    tag: "Technical",
-  },
-  {
-    cat: "Report",
-    title: "State of AEO · Q2 2026",
-    read: "22 min read",
-    tag: "Quarterly",
-  },
+const SECTIONS: { id: string; category: PostCategory; title: string }[] = [
+  { id: "guides", category: "guide", title: "Guides & how-tos" },
+  { id: "research", category: "research", title: "Research" },
+  { id: "teardowns", category: "teardown", title: "Teardowns" },
 ];
+
+function PostCard({
+  slug,
+  title,
+  summary,
+  category,
+  readingMinutes,
+  publishedAt,
+  size = "md",
+}: {
+  slug: string;
+  title: string;
+  summary: string;
+  category: PostCategory;
+  readingMinutes: number;
+  publishedAt: string;
+  size?: "md" | "lg";
+}) {
+  return (
+    <Link
+      href={`/resources/${slug}`}
+      className={cn(
+        "card-border p-6 sm:p-7 hover:bg-white/[0.02] transition-colors group flex flex-col",
+        size === "lg" && "sm:col-span-2 lg:col-span-3"
+      )}
+    >
+      <div className="flex items-center justify-between gap-3">
+        <span className="mono text-[10.5px] rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-inset ring-white/10 text-[color:var(--ink-dim)]">
+          {categoryLabel(category)}
+        </span>
+        <span className="mono text-[10.5px] text-[color:var(--ink-mute)]">
+          {readingMinutes} min read
+        </span>
+      </div>
+      <h3
+        className={cn(
+          "mt-5 font-display tracking-tight",
+          size === "lg"
+            ? "text-[24px] sm:text-[30px] leading-[1.1]"
+            : "text-[19px] leading-snug"
+        )}
+      >
+        {title}
+      </h3>
+      <p
+        className={cn(
+          "mt-3 leading-relaxed text-[color:var(--ink-dim)] flex-1",
+          size === "lg" ? "text-[14.5px] max-w-3xl" : "text-[13.5px]"
+        )}
+      >
+        {summary}
+      </p>
+      <div className="mt-6 flex items-center justify-between gap-4">
+        <time
+          dateTime={publishedAt}
+          className="mono text-[10.5px] text-[color:var(--ink-mute)]"
+        >
+          {new Date(publishedAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </time>
+        <span className="inline-flex items-center gap-1 text-[12px] text-[color:var(--ink-dim)] group-hover:text-[color:var(--ink)]">
+          Read <ArrowUpRight className="h-3.5 w-3.5" />
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 export default function ResourcesPage() {
+  const featured = POSTS[0];
   return (
     <>
       <PageHero
         eyebrow="Resources"
         title={
           <>
-            What we&apos;re learning
+            What we&apos;re learning about
             <br />
-            <span className="text-gradient-accent">about winning the answer.</span>
+            <span className="text-gradient-accent">being the answer.</span>
           </>
         }
-        subtitle="The AEO playbook is still being written. Here's what we're seeing across client engagements, updated as we learn."
+        subtitle="The AEO playbook is still being written. Here's what we're seeing across client projects, updated as we learn."
       />
 
       {/* Categories */}
-      <section className="py-20 border-t border-[color:var(--line)]">
+      <section className="py-16 border-t border-[color:var(--line)]">
         <Container size="wide">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {CATS.map((c) => (
               <Link
-                key={c.id}
-                href={`#${c.id}`}
+                key={c.title}
+                href={c.href}
                 className="card-border p-6 group hover:bg-white/[0.02] transition-colors"
               >
                 <div className="flex items-start justify-between">
@@ -108,7 +171,7 @@ export default function ResourcesPage() {
                   </span>
                   <ArrowUpRight className="h-4 w-4 text-[color:var(--ink-mute)] opacity-0 group-hover:opacity-100 transition" />
                 </div>
-                <h3 className="mt-6 font-display text-[20px] tracking-tight">
+                <h3 className="mt-6 font-display text-[19px] tracking-tight">
                   {c.title}
                 </h3>
                 <p className="mt-2 text-[13.5px] leading-relaxed text-[color:var(--ink-dim)]">
@@ -120,62 +183,67 @@ export default function ResourcesPage() {
         </Container>
       </section>
 
-      {/* Latest */}
-      <section id="guides" className="py-20 border-t border-[color:var(--line)]">
-        <Container size="wide">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <Eyebrow>Latest</Eyebrow>
-              <h2 className="headline mt-4 text-[28px] sm:text-[36px] leading-tight tracking-tight">
-                From the working notes.
-              </h2>
+      {/* Featured */}
+      {featured && (
+        <section className="py-10">
+          <Container size="wide">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <PostCard
+                slug={featured.slug}
+                title={featured.title}
+                summary={featured.summary}
+                category={featured.category}
+                readingMinutes={featured.readingMinutes}
+                publishedAt={featured.publishedAt}
+                size="lg"
+              />
             </div>
-            <span className="mono text-[11px] text-[color:var(--ink-mute)]">
-              Updated weekly
-            </span>
-          </div>
+          </Container>
+        </section>
+      )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PREVIEW_POSTS.map((p, i) => (
-              <article
-                key={i}
-                className={cn(
-                  "card-border p-6 hover:bg-white/[0.02] transition-colors group",
-                  i === 0 && "lg:col-span-3 lg:row-span-1"
-                )}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="mono text-[10.5px] rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-inset ring-white/10 text-[color:var(--ink-dim)]">
-                    {p.cat}
-                  </span>
-                  <span className="mono text-[10.5px] text-[color:var(--ink-mute)]">
-                    {p.read}
-                  </span>
+      {/* Sectioned lists */}
+      {SECTIONS.map((section) => {
+        const postsInCat = POSTS.filter(
+          (p) => p.category === section.category && p.slug !== featured?.slug
+        );
+        if (postsInCat.length === 0) return null;
+        return (
+          <section
+            key={section.id}
+            id={section.id}
+            className="py-16 border-t border-[color:var(--line)] scroll-mt-24"
+          >
+            <Container size="wide">
+              <div className="flex items-end justify-between mb-8 gap-4">
+                <div>
+                  <Eyebrow>{categoryLabel(section.category)}</Eyebrow>
+                  <h2 className="headline mt-4 text-[26px] sm:text-[34px] leading-tight tracking-tight">
+                    {section.title}
+                  </h2>
                 </div>
-                <h3
-                  className={cn(
-                    "mt-6 font-display tracking-tight",
-                    i === 0
-                      ? "text-[28px] sm:text-[34px] leading-[1.08] max-w-3xl"
-                      : "text-[18px] leading-snug"
-                  )}
-                >
-                  {p.title}
-                </h3>
-                <div className="mt-6 flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[--accent]" />
-                  <span className="mono text-[10.5px] text-[color:var(--ink-mute)]">
-                    {p.tag}
-                  </span>
-                  <span className="ml-auto inline-flex items-center gap-1 text-[12px] text-[color:var(--ink-dim)] group-hover:text-[color:var(--ink)]">
-                    Read <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
+                <span className="mono text-[11px] text-[color:var(--ink-mute)]">
+                  {postsInCat.length}{" "}
+                  {postsInCat.length === 1 ? "piece" : "pieces"}
+                </span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {postsInCat.map((p) => (
+                  <PostCard
+                    key={p.slug}
+                    slug={p.slug}
+                    title={p.title}
+                    summary={p.summary}
+                    category={p.category}
+                    readingMinutes={p.readingMinutes}
+                    publishedAt={p.publishedAt}
+                  />
+                ))}
+              </div>
+            </Container>
+          </section>
+        );
+      })}
 
       <FinalCTA />
     </>

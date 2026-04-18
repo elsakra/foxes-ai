@@ -14,29 +14,36 @@ import { cn } from "@/lib/utils";
 export const metadata = {
   title: "Platform · How it works",
   description:
-    "Four workstreams. One repeating loop. Your mention rate, climbing.",
+    "Four tracks. One repeating loop. Your name, showing up more often in AI answers.",
+  alternates: { canonical: "/platform" },
+  openGraph: {
+    title: "Platform · How it works | Foxes.ai",
+    description:
+      "Four tracks. One repeating loop. Your name, showing up more often in AI answers.",
+    url: "/platform",
+  },
 };
 
 const LOOP = [
   {
     num: "01",
     t: "Measure",
-    b: "We map the real buyer questions in your category and run them across ChatGPT, Claude, Perplexity, Gemini, and Copilot. Weekly. We log every answer, every competitor mention, every shift.",
+    b: "We map the real questions your buyers are typing into AI and run them across ChatGPT, Claude, Perplexity, Gemini, and Copilot. Weekly. We log every answer, every competitor mention, every shift.",
   },
   {
     num: "02",
     t: "Prioritize",
-    b: "We rank your gaps by buyer intent and fix difficulty. You get a plan — what to publish, what to earn, what to optimize, in what order.",
+    b: "We rank the gaps by how much each one matters and how hard it is to fix. You get a plan — what to publish, what to earn, what to clean up, in what order.",
   },
   {
     num: "03",
     t: "Produce",
-    b: "We produce the content — comparison pages, long-form, help docs, Reddit, video, third-party placements. Under your brand, through your review.",
+    b: "We produce the content — comparison pages, long-form answers, help docs, Reddit replies, video, third-party write-ups. Under your brand, through your review.",
   },
   {
     num: "04",
     t: "Report",
-    b: "Every week, one number: did your mention rate move. We report honestly, iterate fast, and kill what isn't working.",
+    b: "Every week, one number: are you showing up more often. We report honestly, iterate fast, and kill what isn't working.",
   },
 ];
 
@@ -46,16 +53,16 @@ const STACK = [
     title: "Measurement",
     items: [
       {
-        t: "Live LLM queries",
-        b: "Real ChatGPT, Claude, Perplexity, Gemini, and Copilot. Never SERP proxies. Weekly standard, daily for enterprise.",
+        t: "Real AI queries",
+        b: "The actual ChatGPT, Claude, Perplexity, Gemini, and Copilot — never recycled Google results. Weekly by default, daily for enterprise.",
       },
       {
         t: "Custom question sets",
-        b: "Tailored to your category, ICP, and funnel stage. Built on the demo audit, refined through the first 90 days.",
+        b: "Built around your category, your ideal customer, and the early vs late buyer questions. Seeded from the demo audit, refined through the first 90 days.",
       },
       {
         t: "Competitor benchmarking",
-        b: "Your top 5–10 rivals tracked on every question alongside you. Share of answer, not just presence.",
+        b: "Your top 5–10 rivals tracked on every question alongside you. Share of AI answers, not just presence.",
       },
       {
         t: "Dashboard",
@@ -69,7 +76,7 @@ const STACK = [
     items: [
       {
         t: "Long-form and comparison pages",
-        b: "The format models cite most across most B2B categories. Researched, written, published under your brand.",
+        b: "The format AI cites most across most B2B categories. Researched, written, published under your brand.",
       },
       {
         t: "Reddit and niche platforms",
@@ -81,7 +88,7 @@ const STACK = [
       },
       {
         t: "Video and YouTube",
-        b: "For categories where models lean on video. Scripts, briefs, optimization — ready for your team or ours to produce.",
+        b: "For categories where AI leans on video. Scripts, briefs, optimization — ready for your team or ours to produce.",
       },
       {
         t: "Third-party placements",
@@ -94,16 +101,16 @@ const STACK = [
     title: "Authority",
     items: [
       {
-        t: "Citation engineering",
-        b: "Models have favorite sources. We identify them for your category and get your brand into them.",
+        t: "Trusted sources",
+        b: "AI has favorite places to pull from. We figure out which ones for your category and get your brand into them.",
       },
       {
-        t: "Structured data & technical AEO",
-        b: "Schema, markup, crawl posture for AI agents. The technical floor that amplifies everything above it.",
+        t: "Site setup for AI",
+        b: "Schema, structured data, and how your site gets read by AI crawlers. The boring layer that amplifies everything on top.",
       },
       {
         t: "Brand mention monitoring",
-        b: "Where your brand shows up across the web and how to pull more of those mentions into surfaces AI cites.",
+        b: "Where your brand already shows up on the web — and how to pull more of those mentions onto surfaces AI cites.",
       },
     ],
   },
@@ -117,7 +124,7 @@ const STACK = [
       },
       {
         t: "Monthly report",
-        b: "Mention rate change across every tracked question. Competitive shifts. Content attribution.",
+        b: "Change in how often you're named across every tracked question. Competitive shifts. Content attribution.",
       },
       {
         t: "Quarterly review",
@@ -132,19 +139,19 @@ const TIMELINE = [
     phase: "Days 1–14",
     title: "Kickoff",
     body:
-      "Tracked question set locked. Baseline scan complete across all five models. Competitor benchmark locked. 90-day content calendar approved. You meet every person on the account.",
+      "Tracked question set locked. Baseline scan complete across all five AIs. Competitor benchmark locked. 90-day content calendar approved. You meet every person on the account.",
   },
   {
     phase: "Days 15–45",
     title: "First wave",
     body:
-      "6–12 content assets shipped (volume depends on engagement tier). Weekly scans begin showing early movement. First third-party placements secured.",
+      "6–12 pieces of content shipped (volume depends on the plan). Weekly scans begin showing early movement. First third-party placements secured.",
   },
   {
     phase: "Days 46–90",
     title: "Second wave",
     body:
-      "Next wave of content live. Mid-engagement strategy review. Measurable mention-rate lift on 30%+ of tracked gaps (our target). Roadmap for days 91–180 agreed.",
+      "Next wave of content live. Mid-project strategy review. Measurable lift on 30%+ of tracked questions (our target). Roadmap for days 91–180 agreed.",
   },
 ];
 
@@ -155,15 +162,21 @@ export default function PlatformPage() {
         eyebrow="How it works"
         title={
           <>
-            Four workstreams. One repeating loop.
+            Four tracks. One repeating loop.
             <br />
-            <span className="text-gradient-accent">Your mention rate, climbing.</span>
+            <span className="text-gradient-accent">Your name showing up more.</span>
           </>
         }
-        subtitle="Here's what happens from the day you book a demo through month twelve of an ongoing engagement."
+        subtitle="Here's what happens from the day you book a demo through month twelve of working together."
       >
-        <div className="flex items-center gap-3 flex-wrap">
-          <LinkButton href={BOOKING_URL} variant="primary" size="lg" arrow>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-wrap">
+          <LinkButton
+            href={BOOKING_URL}
+            variant="primary"
+            size="lg"
+            arrow
+            className="w-full sm:w-auto justify-center"
+          >
             Book a demo
           </LinkButton>
           <div className="flex items-center gap-1.5 text-[11.5px] mono text-[color:var(--ink-mute)]">
@@ -218,7 +231,7 @@ export default function PlatformPage() {
           </div>
 
           <div className="mt-10 rounded-2xl border border-[color:var(--line)] bg-[color:var(--bg-elev)] p-6 sm:p-8">
-            <MentionRateLine title="One number: your mention rate, tracked every week" />
+            <MentionRateLine title="One number: how often you're named, tracked every week" />
           </div>
         </Container>
       </section>
@@ -266,7 +279,7 @@ export default function PlatformPage() {
                   {/* Per-group mockup accent */}
                   {group.id === "measurement" && (
                     <div className="card-border sm:col-span-2 p-5">
-                      <ShareOfVoiceChart title="Benchmarking · one of your tracked prompts" />
+                      <ShareOfVoiceChart title="Benchmarking · one of your tracked questions" />
                     </div>
                   )}
                   {group.id === "content" && (
