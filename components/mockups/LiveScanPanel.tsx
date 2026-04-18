@@ -98,7 +98,7 @@ export function LiveScanPanel({
   const activeModel = step.model;
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative isolate [overflow-anchor:none]", className)}>
       {/* Glow behind */}
       <div
         aria-hidden
@@ -114,9 +114,9 @@ export function LiveScanPanel({
           </div>
         }
       >
-        <div className="grid grid-cols-12 min-h-[560px] sm:min-h-[540px] items-stretch">
+        <div className="grid grid-cols-12 h-[528px] sm:h-[556px] overflow-hidden items-stretch shrink-0 [contain:layout]">
           {/* Left rail: models */}
-          <div className="col-span-4 sm:col-span-3 border-r border-[color:var(--line)] p-3 space-y-1 flex flex-col h-full min-h-0">
+          <div className="col-span-4 sm:col-span-3 border-r border-[color:var(--line)] p-2.5 sm:p-3 space-y-1 flex flex-col h-full min-h-0 overflow-y-auto overscroll-y-contain">
             <div className="eyebrow px-2 py-1.5 mb-1">Models</div>
             {MODELS.map((m) => {
               const active = m.id === activeModel;
@@ -156,15 +156,12 @@ export function LiveScanPanel({
                 <span className="mono text-[11px] text-[color:var(--success)]">+12.4%</span>
               </div>
               <div className="mt-2 font-display text-[28px] leading-none tracking-tight tabular-nums min-h-[28px]">
-                <motion.span
+                <span
                   key={mentionRate}
-                  initial={{ opacity: 0.6 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.2 }}
                   className="inline-block min-w-[48px] tabular-nums"
                 >
                   {mentionRate}
-                </motion.span>
+                </span>
                 <span className="text-[color:var(--ink-mute)] text-[16px] ml-0.5">%</span>
               </div>
               <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
@@ -172,85 +169,86 @@ export function LiveScanPanel({
                   className="h-full bg-gradient-to-r from-[--accent-soft] to-[--accent]"
                   initial={false}
                   animate={{ width: `${mentionRate}%` }}
-                  transition={{ type: "spring", stiffness: 120, damping: 20 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
                 />
               </div>
             </div>
           </div>
 
-          {/* Center: query + answer */}
-          <div className="col-span-8 sm:col-span-9 p-4 sm:p-6 flex flex-col min-h-[500px] sm:min-h-[480px]">
-            {/* key + motion without AnimatePresence mode=wait — avoids exit blocking the next step */}
-            <motion.div
+          {/* Center: query + answer — fixed flex slots + inner scroll so height never changes per step */}
+          <div className="col-span-8 sm:col-span-9 p-3 sm:p-5 flex flex-col h-full min-h-0 overflow-hidden">
+            <div
               key={slideKey}
-              initial={{ opacity: 0.35 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.2 }}
-              className="flex flex-col flex-1 min-h-0"
+              className="flex flex-col h-full min-h-0 overflow-hidden"
             >
-                <div className="flex items-center justify-between gap-2 shrink-0">
-                  <div className="flex items-center gap-2 text-[color:var(--ink-dim)]">
-                    <Sparkles className="h-3.5 w-3.5 text-[--accent]" />
-                    <span className="eyebrow">Buyer prompt</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 mono text-[11px] text-[color:var(--ink-mute)]">
-                    <span>Week 6 · Scan {String(2800 + i * 7).padStart(4, "0")}</span>
-                  </div>
+              <div className="flex items-center justify-between gap-2 shrink-0">
+                <div className="flex items-center gap-2 text-[color:var(--ink-dim)] min-w-0">
+                  <Sparkles className="h-3.5 w-3.5 shrink-0 text-[--accent]" />
+                  <span className="eyebrow">Buyer prompt</span>
                 </div>
+                <div className="mono text-[10px] sm:text-[11px] text-[color:var(--ink-mute)] shrink-0 tabular-nums">
+                  W6 · {String(2800 + i * 7).padStart(4, "0")}
+                </div>
+              </div>
 
-                <div className="mt-2 font-display text-[17px] sm:text-[20px] leading-snug tracking-tight min-h-[4.5rem] sm:min-h-[3.75rem]">
+              <div className="mt-2 h-[4.5rem] sm:h-[4rem] shrink-0 overflow-hidden">
+                <p className="font-display text-[16px] sm:text-[20px] leading-snug tracking-tight text-[color:var(--ink)] line-clamp-3">
                   &ldquo;{step.question}&rdquo;
+                </p>
+              </div>
+
+              <div className="mt-3 flex-1 min-h-0 flex flex-col rounded-xl border border-[color:var(--line)] bg-black/20 overflow-hidden">
+                <div className="flex items-start sm:items-center justify-between gap-2 px-3 pt-3 pb-2 sm:px-4 sm:pt-4 shrink-0 border-b border-[color:var(--line)]/60">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span
+                      className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
+                      style={{
+                        background: `${
+                          MODELS.find((m) => m.id === activeModel)?.color
+                        }18`,
+                        color: MODELS.find((m) => m.id === activeModel)?.color,
+                      }}
+                    >
+                      <ModelIcon id={activeModel} className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-[13px] text-[color:var(--ink)] truncate">
+                      {MODELS.find((m) => m.id === activeModel)?.name}
+                    </span>
+                    <span className="mono text-[10.5px] text-[color:var(--ink-mute)] shrink-0">
+                      · answering
+                    </span>
+                  </div>
+                  <div
+                    className={cn(
+                      "inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] mono shrink-0",
+                      step.mentioned
+                        ? "bg-[--success]/10 text-[--success] ring-1 ring-inset ring-[--success]/20"
+                        : "bg-white/5 text-[color:var(--ink-mute)] ring-1 ring-inset ring-white/10"
+                    )}
+                  >
+                    {step.mentioned ? (
+                      <>
+                        <CheckCircle2 className="h-3 w-3" /> Named · #{step.rank}
+                      </>
+                    ) : (
+                      <>Not named</>
+                    )}
+                  </div>
                 </div>
 
-                <div className="mt-5 rounded-xl border border-[color:var(--line)] bg-black/20 p-4 relative overflow-hidden flex flex-col flex-1 min-h-[320px] sm:min-h-[300px]">
-                  <div className="flex items-start sm:items-center justify-between mb-3 gap-2 flex-wrap shrink-0 min-h-[2rem]">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <span
-                        className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
-                        style={{
-                          background: `${
-                            MODELS.find((m) => m.id === activeModel)?.color
-                          }18`,
-                          color: MODELS.find((m) => m.id === activeModel)?.color,
-                        }}
-                      >
-                        <ModelIcon id={activeModel} className="h-3.5 w-3.5" />
-                      </span>
-                      <span className="text-[13px] text-[color:var(--ink)] truncate">
-                        {MODELS.find((m) => m.id === activeModel)?.name}
-                      </span>
-                      <span className="mono text-[10.5px] text-[color:var(--ink-mute)] shrink-0">
-                        · answering
-                      </span>
-                    </div>
-                    <div
-                      className={cn(
-                        "inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] mono shrink-0",
-                        step.mentioned
-                          ? "bg-[--success]/10 text-[--success] ring-1 ring-inset ring-[--success]/20"
-                          : "bg-white/5 text-[color:var(--ink-mute)] ring-1 ring-inset ring-white/10"
-                      )}
-                    >
-                      {step.mentioned ? (
-                        <>
-                          <CheckCircle2 className="h-3 w-3" /> Named · #{step.rank}
-                        </>
-                      ) : (
-                        <>Not named</>
-                      )}
-                    </div>
-                  </div>
-
-                  <p className="text-[13.5px] leading-relaxed text-[color:var(--ink-dim)] min-h-[11rem] sm:min-h-[10rem] grow-0">
+                <div className="flex-1 min-h-0 overflow-y-auto overscroll-y-contain px-3 py-3 sm:px-4 touch-pan-y">
+                  <p className="text-[13.5px] leading-relaxed text-[color:var(--ink-dim)]">
                     {step.excerpt}
                   </p>
+                </div>
 
-                  <div className="mt-4 flex items-start flex-wrap gap-1.5 gap-y-2 min-h-[3.25rem] content-start">
+                <div className="shrink-0 max-h-[5rem] overflow-y-auto overscroll-y-contain border-t border-[color:var(--line)]/60 px-3 py-2.5 sm:px-4">
+                  <div className="flex flex-wrap items-start gap-1.5 gap-y-1.5">
                     <span className="eyebrow mr-1 shrink-0 pt-0.5">Also mentioned</span>
                     {step.competitors.map((c) => (
                       <span
                         key={c}
-                        className="mono text-[11px] rounded-md bg-white/5 px-1.5 py-0.5 ring-1 ring-inset ring-white/10 break-words"
+                        className="mono text-[11px] rounded-md bg-white/5 px-1.5 py-0.5 ring-1 ring-inset ring-white/10"
                         title={c}
                       >
                         {c}
@@ -258,18 +256,17 @@ export function LiveScanPanel({
                     ))}
                   </div>
                 </div>
+              </div>
 
-                <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 shrink-0 min-h-[3rem]">
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11.5px] text-[color:var(--ink-mute)]">
-                    <span className="mono">Weekly scan loop</span>
-                    <span className="hidden sm:inline h-0.5 w-6 bg-gradient-to-r from-[--accent] to-transparent" />
-                    <span className="mono">5 models · 124 prompts</span>
-                  </div>
-                  <div className="inline-flex items-center gap-1 mono text-[11.5px] text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] shrink-0">
-                    Open report <ArrowUpRight className="h-3 w-3" />
-                  </div>
+              <div className="mt-2 flex h-11 shrink-0 items-center justify-between gap-2 border-t border-[color:var(--line)]/40 pt-2 sm:mt-3 sm:h-auto sm:min-h-[2.75rem] sm:border-t-0 sm:pt-1">
+                <p className="mono min-w-0 flex-1 truncate text-[10.5px] text-[color:var(--ink-mute)] sm:overflow-visible sm:whitespace-normal sm:text-[11.5px]">
+                  Weekly scan · 5 models · 124 prompts
+                </p>
+                <div className="inline-flex shrink-0 items-center gap-1 mono text-[10.5px] text-[color:var(--ink-dim)] sm:text-[11.5px]">
+                  Open report <ArrowUpRight className="h-3 w-3" />
                 </div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </MockWindow>
