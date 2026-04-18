@@ -17,7 +17,7 @@ export function Stakes() {
       />
 
       <Container>
-        <div className="flex justify-center">
+        <div className="text-center">
           <Eyebrow>The stakes</Eyebrow>
         </div>
 
@@ -26,29 +26,32 @@ export function Stakes() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-15%" }}
           transition={{ duration: 0.7 }}
-          className="headline mt-4 text-center text-[28px] sm:text-[38px] md:text-[48px] lg:text-[56px] leading-[1.08] tracking-tight max-w-4xl mx-auto"
+          className="headline mt-5 text-center text-balance text-[28px] sm:text-[38px] md:text-[48px] lg:text-[56px] leading-[1.12] tracking-tight max-w-[min(100%,40rem)] mx-auto px-2"
         >
-          Your customers are asking AI who to buy from.
-          <br />
-          <span className="text-[color:var(--ink-dim)]">
+          <span className="text-[color:var(--ink)]">
+            Your customers are asking AI{" "}
+            <br className="sm:hidden" />
+            who to buy from.
+          </span>
+          <span className="mt-3 block text-[color:var(--ink-dim)]">
             Is it telling them about you?
           </span>
         </motion.h2>
 
-        <div className="mt-10 max-w-2xl mx-auto text-center text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] px-2">
-          Every day, thousands of people in your market type a question into
-          ChatGPT, Claude, or Perplexity. The AI gives them two or three brands
-          to check out.
-          <br />
-          <br />
-          If yours isn&apos;t one of them, you lose the customer before you even
-          knew they existed.
-          <br />
-          <br />
-          Most brands have no idea how often this is happening.
+        <div className="mt-8 max-w-2xl mx-auto space-y-4 text-center text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] px-2">
+          <p>
+            Every day, thousands of people in your market type a question into
+            ChatGPT, Claude, or Perplexity. The AI gives them two or three brands
+            to check out.
+          </p>
+          <p>
+            If yours isn&apos;t one of them, you lose the customer before you even
+            knew they existed.
+          </p>
+          <p>Most brands have no idea how often this is happening.</p>
         </div>
 
-        <div className="mt-10 flex justify-center px-4">
+        <div className="mt-8 flex justify-center px-4">
           <LinkButton
             href={BOOKING_URL}
             variant="primary"
@@ -63,7 +66,7 @@ export function Stakes() {
           </LinkButton>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-16 sm:mt-20">
           <div className="mb-4 eyebrow text-center">Live · real prompts, real models</div>
           <BuyerQuestionStream />
         </div>
