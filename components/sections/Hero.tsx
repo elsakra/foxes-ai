@@ -48,13 +48,11 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.12 }}
               className="mt-6 text-[15.5px] sm:text-[17px] leading-relaxed text-[color:var(--ink-dim)] max-w-xl"
             >
-              Over 400 million people a week ask AI which brand to buy. The ones
-              named in the answer win the shortlist. The ones that aren&apos;t
-              don&apos;t get a second chance.
+              Your customers are asking ChatGPT and Claude which brand to buy.
+              If AI doesn&apos;t name you, they buy from someone else.
               <br />
               <br />
-              Foxes.ai is the team that gets your brand named in those answers
-              — and keeps you there.
+              We get your brand named in those answers.
             </motion.p>
 
             <motion.div
@@ -88,8 +86,8 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.28 }}
               className="mt-5 text-[12.5px] text-[color:var(--ink-mute)] max-w-lg"
             >
-              Every demo comes with a free audit of your brand&apos;s AI
-              visibility. Yours to keep, whether you hire us or not.
+              Book a demo and we&apos;ll send you a free report showing how often
+              AI recommends your brand. Yours to keep.
             </motion.p>
 
             <motion.div

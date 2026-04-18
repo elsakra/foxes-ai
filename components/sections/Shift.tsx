@@ -10,7 +10,7 @@ const ERAS = [
   { year: "2005", title: "Search engines", sub: "Own Google's blue links" },
   { year: "2012", title: "Content marketing", sub: "Inbound dominates" },
   { year: "2015", title: "Social", sub: "Paid + creator-led reach" },
-  { year: "2026", title: "Generative AI", sub: "The answer is the shortlist" },
+  { year: "2026", title: "Generative AI", sub: "Recommendations, not just links" },
 ];
 
 export function Shift() {
@@ -21,27 +21,27 @@ export function Shift() {
           <div className="lg:col-span-5">
             <Eyebrow>Why this matters now</Eyebrow>
             <h2 className="headline mt-4 text-[28px] sm:text-[36px] md:text-[42px] leading-[1.08] tracking-tight">
-              The brands that figured out Google in 2005 owned a decade. AI is
-              the same moment.
+              The brands that figured out Google in 2005 won the next decade.
+              AI is the next one.
             </h2>
           </div>
           <div className="lg:col-span-7">
             <div className="space-y-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)]">
               <p>
-                Every few years, the way buyers find brands changes. First it
-                was Google. Then review sites. Then social. Now it&apos;s AI.
+                Every few years, the way people find brands changes. First
+                Google. Then review sites. Then social media. Now AI.
               </p>
               <p>
-                Every time, the brands that move early become the default. The
-                ones that wait get stuck playing catch-up for years.
+                Every time it changes, a handful of brands move fast and become
+                the go-to names. Everyone else spends years trying to catch up.
               </p>
               <p className="text-[color:var(--ink)]">
-                AI has its favorites. Once it learns to recommend a brand in
-                your category, it keeps recommending them. The longer you
-                wait, the harder it gets to break in.
+                AI picks favorites. Once it starts recommending a brand, it
+                keeps recommending them. The longer you wait, the harder it is
+                to become one of those names.
               </p>
               <p>
-                We get you in. Starting now beats starting in six months.
+                Starting now is a lot easier than starting in six months.
               </p>
             </div>
 

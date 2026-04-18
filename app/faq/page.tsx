@@ -30,7 +30,7 @@ export const SECTIONS = [
       },
       {
         q: "Is there really no catch?",
-        a: "No catch. We don't charge for the audit, we don't charge for the demo, and you keep the report whether you hire us or not. The economics work because doing excellent work upfront is the best filter we have for the clients we want. Most brands that see what's possible engage. Some don't. Either way, we'd rather have the conversation with real data than pitch from a template.",
+        a: "No catch. We'd rather show you real work on your brand than try to sell you. You keep the report either way.",
       },
       {
         q: "How long does the demo take?",
@@ -47,11 +47,11 @@ export const SECTIONS = [
     items: [
       {
         q: "How is this different from SEO?",
-        a: "SEO gets you ranked on Google. We get you named by ChatGPT, Claude, Perplexity, Gemini, and Copilot. They're different games with different rules, and what wins one doesn't always win the other.",
+        a: "SEO gets you ranked on Google. We get you recommended by ChatGPT, Claude, Perplexity, Gemini, and Copilot. They're two different games, and what works for one doesn't always work for the other.",
       },
       {
         q: "How is this different from software for this?",
-        a: "Software shows you the problem. We solve it. Most teams buy an AEO tool, log in once, see a giant to-do list, and never log back in. We handle the tracking and do the work.",
+        a: "Software shows you what's wrong. We fix it. Most people buy one of these tools, log in once, see a huge to-do list, and never log back in. We actually do the work.",
       },
       {
         q: "Do you work with our existing SEO, content, or PR agency?",

@@ -19,12 +19,12 @@ export function Pillars() {
         <div className="max-w-3xl">
           <Eyebrow>End-to-end, done for you</Eyebrow>
           <h2 className="headline mt-4 text-[30px] sm:text-[40px] md:text-[46px] leading-[1.05] tracking-tight">
-            We get your brand into AI answers. You don&apos;t lift a finger.
+            We do the work. Your brand gets named more.
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-xl">
-            There&apos;s no single trick to getting named by ChatGPT or Claude.
-            It takes the right content, on the right sites, tracked every week.
-            We do all of it for you.
+            Getting AI to recommend you isn&apos;t one thing. It takes the right
+            kind of content, in the right places online, and someone checking
+            every week to see what&apos;s working. We handle all of it.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export function Pillars() {
           <PillarCard
             title="Measurement"
             eyebrow="01"
-            body="We ask the real ChatGPT, Claude, Perplexity, Gemini, and Copilot the questions your buyers actually type — not recycled Google results. Weekly scans, full competitor benchmarking, and a clear number: how often AI names you."
+            body="Every week, we ask ChatGPT, Claude, Perplexity, Gemini, and Copilot the same questions your customers ask them. Then we see who gets named — you or your competitors."
             className="lg:col-span-4"
             accent
           >
@@ -46,7 +46,7 @@ export function Pillars() {
           <PillarCard
             title="Authority"
             eyebrow="03"
-            body="We build the trusted sources AI pulls from — G2, Capterra, industry publications, podcasts, expert roundups — so when a model goes looking for a reliable name, it finds you."
+            body="AI trusts certain sites more than others — G2, Capterra, big industry blogs, popular podcasts. We get your brand onto those sites so AI has good reasons to recommend you."
             className="lg:col-span-2"
           >
             <div className="mt-6 space-y-2">
@@ -72,7 +72,7 @@ export function Pillars() {
           <PillarCard
             title="Content"
             eyebrow="02"
-            body="We produce the comparison pages, long-form answers, help docs, Reddit replies, YouTube scripts, and third-party write-ups that models actually pull from. Under your brand, through your review."
+            body="We write the comparison pages, blog posts, help docs, Reddit replies, and YouTube scripts that AI looks at when it&apos;s deciding who to recommend. You review everything before it goes live."
             className="lg:col-span-3"
           >
             <div className="mt-6">
@@ -84,7 +84,7 @@ export function Pillars() {
           <PillarCard
             title="Reporting"
             eyebrow="04"
-            body="One number that matters: are you showing up more often. We report it weekly. Flat months get the same honest conversation as up months."
+            body="Every week, we send you one number: how often AI named your brand this week vs. last week. When it&apos;s up, we tell you why. When it&apos;s flat, we tell you that too."
             className="lg:col-span-3"
             accent
           >

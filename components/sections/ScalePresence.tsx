@@ -18,45 +18,45 @@ import { cn } from "@/lib/utils";
 
 const CAPS = [
   {
-    title: "Buyer questions, mapped",
-    body: "We find the real questions your buyers are asking AI — not the keyword lists an SEO tool would spit out.",
+    title: "Finding the right questions",
+    body: "We figure out what your customers are actually asking AI — the real words they type, not a keyword list.",
     icon: Search,
     className: "lg:col-span-3 lg:row-span-2",
     big: true,
   },
   {
-    title: "Tracked across every major AI",
-    body: "ChatGPT, Claude, Perplexity, Gemini, and Copilot. Scanned weekly.",
+    title: "Tracking every major AI",
+    body: "ChatGPT, Claude, Perplexity, Gemini, and Copilot. Checked every week.",
     icon: Gauge,
     className: "lg:col-span-3",
   },
   {
-    title: "Competitive intelligence",
-    body: "Who's getting named, why, and what to do about it.",
+    title: "Watching your competitors",
+    body: "We see who's getting named instead of you, and figure out why.",
     icon: BarChart3,
     className: "lg:col-span-3",
   },
   {
-    title: "Content production",
-    body: "Comparison pages, long-form answers, help docs, video, Reddit presence.",
+    title: "Writing what AI reads",
+    body: "Comparison pages, long posts, help docs, videos, Reddit replies.",
     icon: PenTool,
     className: "lg:col-span-3",
   },
   {
-    title: "Authority building",
-    body: "We get you into the places AI trusts — reviews, podcasts, industry sites, expert roundups.",
+    title: "Getting you on trusted sites",
+    body: "Reviews, podcasts, industry blogs, expert roundups — the places AI looks for names to recommend.",
     icon: Link2,
     className: "lg:col-span-3",
   },
   {
-    title: "Site setup for AI",
-    body: "We make sure AI can actually read and understand your website.",
+    title: "Making your site AI-readable",
+    body: "We set up your website so AI can actually find and understand what you do.",
     icon: Cpu,
     className: "lg:col-span-3",
   },
   {
-    title: "Weekly reporting",
-    body: "Every week, one number: are you getting named more often?",
+    title: "A clear weekly update",
+    body: "One number every week: did AI name you more than last week?",
     icon: LineChart,
     className: "lg:col-span-3",
   },
@@ -73,13 +73,14 @@ export function ScalePresence() {
               Scale your AI visibility. Not your headcount.
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)]">
-              Doing this yourself means hiring a strategist, a researcher, two
-              writers, and a technical SEO — and buying tracking software.
-              That&apos;s six months before you publish anything.
+              To do this in-house, you&apos;d need to hire a strategist, a
+              researcher, two writers, and someone technical — plus pay for
+              tracking software. That&apos;s six months before anything gets
+              published.
               <br />
               <br />
-              Or you book a demo with us. We already have the team, the
-              tracking, and the process. You get a weekly report. We do the work.
+              Or you hire us. The team, the tracking, and the process are
+              already set up. You get a weekly report. We do the work.
             </p>
           </div>
           <LinkButton

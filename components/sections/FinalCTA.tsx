@@ -23,13 +23,13 @@ export function FinalCTA() {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="headline text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] leading-[1.04] tracking-tight">
-            Find out where your brand stands in{" "}
-            <span className="text-gradient-accent">AI answers</span>.
+            See how AI talks about your brand{" "}
+            <span className="text-gradient-accent">today</span>.
           </h2>
           <p className="mt-6 text-[16px] leading-relaxed text-[color:var(--ink-dim)] max-w-2xl mx-auto px-2">
-            Book a 30-minute call. We&apos;ll audit your brand before we meet and
-            walk you through everything on the call. You keep the full report.
-            No strings.
+            Book a 30-minute call. We&apos;ll run the report before we meet and
+            walk you through it on the call. You keep the full report. No
+            strings attached.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 px-4">
             <LinkButton

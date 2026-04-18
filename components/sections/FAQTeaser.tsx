@@ -5,19 +5,19 @@ import { ArrowRight } from "lucide-react";
 export const QS = [
   {
     q: "Is there really no catch with the free audit?",
-    a: "No. We run the audit before every demo because it's the only honest way to have the conversation. You keep the report no matter what happens next.",
+    a: "No catch. We'd rather show you real work on your brand than try to sell you. You keep the report either way.",
   },
   {
     q: "How is this different from software for this?",
-    a: "Software shows you the problem. We solve it. Most teams buy an AEO tool, log in once, see a giant to-do list, and never log back in. We handle the tracking and do the work.",
+    a: "Software shows you what's wrong. We fix it. Most people buy one of these tools, log in once, see a huge to-do list, and never log back in. We actually do the work.",
   },
   {
     q: "How quickly do results show?",
-    a: "Most clients see more mentions in AI answers within 30–60 days of content shipping. We report weekly.",
+    a: "Most clients start getting named more often within 30 to 60 days of us publishing content. You'll see it in your weekly report.",
   },
   {
     q: "How is this different from SEO?",
-    a: "SEO gets you ranked on Google. We get you named by ChatGPT, Claude, Perplexity, Gemini, and Copilot. They're different games with different rules, and what wins one doesn't always win the other.",
+    a: "SEO gets you ranked on Google. We get you recommended by ChatGPT, Claude, Perplexity, Gemini, and Copilot. They're two different games, and what works for one doesn't always work for the other.",
   },
 ];
 

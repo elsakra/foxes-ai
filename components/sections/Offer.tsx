@@ -8,12 +8,12 @@ import { Check } from "lucide-react";
 import { BOOKING_URL } from "@/lib/copy";
 
 const ITEMS = [
-  "The real questions your buyers are asking AI about your category",
-  "How often you get named (and how often your competitors do)",
+  "The real questions your customers are asking AI about products like yours",
+  "How often AI names you vs. your top competitors",
   "Which competitors are winning and why",
-  "Where AI is pulling its answers from in your space",
+  "The websites AI is pulling its answers from",
   "What to fix first",
-  "The first three things we'd do to get you named more",
+  "The first three things we'd do to get you named more often",
 ];
 
 export function Offer() {
@@ -48,14 +48,15 @@ export function Offer() {
                 transition={{ duration: 0.6 }}
                 className="headline mt-3 text-[30px] sm:text-[40px] md:text-[48px] leading-[1.05] tracking-tight"
               >
-                Get a <span className="text-[#B84700]">free</span> audit of
-                your brand&apos;s AI visibility.
+                Book a demo.{" "}
+                <span className="text-[#B84700]">Get a free report</span> on how
+                AI talks about your brand.
               </motion.h2>
 
               <p className="mt-5 text-[15.5px] leading-relaxed text-black/75 max-w-xl">
-                Book a demo and we&apos;ll run a full audit of your brand before
-                the call. It&apos;s the same report our paying clients get. We
-                walk you through it on the call. You keep it.
+                Before our call, we&apos;ll run the same report we normally charge
+                clients for. On the call, we&apos;ll walk you through what we
+                found. You keep the report either way.
               </p>
 
               <div className="mt-8 mono text-[11px] tracking-widest text-black/55 uppercase">
@@ -86,11 +87,11 @@ export function Offer() {
                   Why free
                 </div>
                 <p className="mt-2 text-[13.5px] text-black/75 leading-relaxed">
-                  We&apos;d rather show you real work on your brand than pitch
-                  from a deck. Some people we audit hire us. Some take the report
-                  and run with it themselves. Either way, you walk away with
-                  more insight into your AI visibility than almost any of your
-                  competitors.
+                  We&apos;d rather show you real work on your brand than give you
+                  a sales pitch. Some people who get the report hire us to do
+                  the work. Some take it and do it themselves. Either way, you end
+                  up knowing more about how AI talks about your brand than
+                  almost any of your competitors.
                 </p>
               </div>
 
