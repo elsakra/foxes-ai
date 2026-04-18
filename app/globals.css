@@ -210,7 +210,7 @@ body {
   to { transform: translateX(-50%); }
 }
 .marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 14s linear infinite;
   will-change: transform;
 }
 
