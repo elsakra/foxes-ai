@@ -111,9 +111,9 @@ export function LiveScanPanel({
           </div>
         }
       >
-        <div className="grid grid-cols-12 min-h-[460px] sm:min-h-[520px]">
+        <div className="grid grid-cols-12 min-h-[560px] sm:min-h-[540px] items-stretch">
           {/* Left rail: models */}
-          <div className="col-span-4 sm:col-span-3 border-r border-[color:var(--line)] p-3 space-y-1">
+          <div className="col-span-4 sm:col-span-3 border-r border-[color:var(--line)] p-3 space-y-1 flex flex-col h-full min-h-0">
             <div className="eyebrow px-2 py-1.5 mb-1">Models</div>
             {MODELS.map((m) => {
               const active = m.id === activeModel;
@@ -156,10 +156,10 @@ export function LiveScanPanel({
               <div className="mt-2 font-display text-[28px] leading-none tracking-tight tabular-nums min-h-[28px]">
                 <motion.span
                   key={mentionRate}
-                  initial={{ y: 8, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.35 }}
-                  className="inline-block min-w-[48px]"
+                  initial={{ opacity: 0.6 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                  className="inline-block min-w-[48px] tabular-nums"
                 >
                   {mentionRate}
                 </motion.span>
@@ -177,17 +177,17 @@ export function LiveScanPanel({
           </div>
 
           {/* Center: query + answer */}
-          <div className="col-span-8 sm:col-span-9 p-4 sm:p-6 flex flex-col">
+          <div className="col-span-8 sm:col-span-9 p-4 sm:p-6 flex flex-col min-h-[500px] sm:min-h-[480px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.35 }}
-                className="flex-1 flex flex-col"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="flex flex-col flex-1 min-h-0"
               >
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center justify-between gap-2 shrink-0">
                   <div className="flex items-center gap-2 text-[color:var(--ink-dim)]">
                     <Sparkles className="h-3.5 w-3.5 text-[--accent]" />
                     <span className="eyebrow">Buyer prompt</span>
@@ -197,15 +197,15 @@ export function LiveScanPanel({
                   </div>
                 </div>
 
-                <div className="mt-2 font-display text-[17px] sm:text-[20px] leading-snug tracking-tight">
+                <div className="mt-2 font-display text-[17px] sm:text-[20px] leading-snug tracking-tight min-h-[4.5rem] sm:min-h-[3.75rem]">
                   &ldquo;{step.question}&rdquo;
                 </div>
 
-                <div className="mt-5 rounded-xl border border-[color:var(--line)] bg-black/20 p-4 relative overflow-hidden min-h-[220px]">
-                  <div className="flex items-center justify-between mb-3 gap-2 flex-wrap">
-                    <div className="flex items-center gap-2">
+                <div className="mt-5 rounded-xl border border-[color:var(--line)] bg-black/20 p-4 relative overflow-hidden flex flex-col flex-1 min-h-[320px] sm:min-h-[300px]">
+                  <div className="flex items-start sm:items-center justify-between mb-3 gap-2 flex-wrap shrink-0 min-h-[2rem]">
+                    <div className="flex items-center gap-2 min-w-0">
                       <span
-                        className="inline-flex h-6 w-6 items-center justify-center rounded-md"
+                        className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
                         style={{
                           background: `${
                             MODELS.find((m) => m.id === activeModel)?.color
@@ -215,16 +215,16 @@ export function LiveScanPanel({
                       >
                         <ModelIcon id={activeModel} className="h-3.5 w-3.5" />
                       </span>
-                      <span className="text-[13px] text-[color:var(--ink)]">
+                      <span className="text-[13px] text-[color:var(--ink)] truncate">
                         {MODELS.find((m) => m.id === activeModel)?.name}
                       </span>
-                      <span className="mono text-[10.5px] text-[color:var(--ink-mute)]">
+                      <span className="mono text-[10.5px] text-[color:var(--ink-mute)] shrink-0">
                         · answering
                       </span>
                     </div>
                     <div
                       className={cn(
-                        "inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] mono",
+                        "inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] mono shrink-0",
                         step.mentioned
                           ? "bg-[--success]/10 text-[--success] ring-1 ring-inset ring-[--success]/20"
                           : "bg-white/5 text-[color:var(--ink-mute)] ring-1 ring-inset ring-white/10"
@@ -240,16 +240,17 @@ export function LiveScanPanel({
                     </div>
                   </div>
 
-                  <p className="text-[13.5px] leading-relaxed text-[color:var(--ink-dim)] min-h-[84px]">
-                    <Typewriter text={step.excerpt} key={i} />
+                  <p className="text-[13.5px] leading-relaxed text-[color:var(--ink-dim)] min-h-[11rem] sm:min-h-[10rem] grow-0">
+                    {step.excerpt}
                   </p>
 
-                  <div className="mt-4 flex items-center flex-wrap gap-1.5">
-                    <span className="eyebrow mr-1">Also mentioned</span>
+                  <div className="mt-4 flex items-start flex-wrap gap-1.5 gap-y-2 min-h-[3.25rem] content-start">
+                    <span className="eyebrow mr-1 shrink-0 pt-0.5">Also mentioned</span>
                     {step.competitors.map((c) => (
                       <span
                         key={c}
-                        className="mono text-[11px] rounded-md bg-white/5 px-1.5 py-0.5 ring-1 ring-inset ring-white/10"
+                        className="mono text-[11px] rounded-md bg-white/5 px-1.5 py-0.5 ring-1 ring-inset ring-white/10 break-words"
+                        title={c}
                       >
                         {c}
                       </span>
@@ -257,13 +258,13 @@ export function LiveScanPanel({
                   </div>
                 </div>
 
-                <div className="mt-auto pt-5 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2 text-[11.5px] text-[color:var(--ink-mute)]">
+                <div className="mt-auto pt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 shrink-0 min-h-[3rem]">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11.5px] text-[color:var(--ink-mute)]">
                     <span className="mono">Weekly scan loop</span>
-                    <span className="h-0.5 w-6 bg-gradient-to-r from-[--accent] to-transparent" />
-                    <span className="mono">5 models · 124 tracked prompts</span>
+                    <span className="hidden sm:inline h-0.5 w-6 bg-gradient-to-r from-[--accent] to-transparent" />
+                    <span className="mono">5 models · 124 prompts</span>
                   </div>
-                  <div className="inline-flex items-center gap-1 mono text-[11.5px] text-[color:var(--ink-dim)] hover:text-[color:var(--ink)]">
+                  <div className="inline-flex items-center gap-1 mono text-[11.5px] text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] shrink-0">
                     Open report <ArrowUpRight className="h-3 w-3" />
                   </div>
                 </div>
@@ -273,37 +274,5 @@ export function LiveScanPanel({
         </div>
       </MockWindow>
     </div>
-  );
-}
-
-function Typewriter({ text }: { text: string }) {
-  // Component is remounted via `key` whenever a new prompt arrives, so initial
-  // state is always an empty string — avoiding a setState-in-effect call.
-  const [out, setOut] = React.useState("");
-  React.useEffect(() => {
-    let idx = 0;
-    const id = setInterval(() => {
-      idx += 2;
-      setOut(text.slice(0, idx));
-      if (idx >= text.length) clearInterval(id);
-    }, 14);
-    return () => clearInterval(id);
-  }, [text]);
-
-  // Render bold around **markers**
-  const parts = out.split(/(\*\*[^*]+\*\*)/g);
-  return (
-    <>
-      {parts.map((p, i) =>
-        p.startsWith("**") && p.endsWith("**") ? (
-          <span key={i} className="text-[color:var(--ink)] font-medium">
-            {p.slice(2, -2)}
-          </span>
-        ) : (
-          <span key={i}>{p}</span>
-        )
-      )}
-      <span className="inline-block w-[6px] h-[14px] align-[-2px] ml-[1px] bg-[--accent] animate-pulse" />
-    </>
   );
 }
