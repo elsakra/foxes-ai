@@ -88,8 +88,8 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.28 }}
               className="mt-5 text-[12.5px] text-[color:var(--ink-mute)] max-w-lg"
             >
-              Every demo includes a full audit of how often AI names your brand
-              — yours to keep, free, whether we ever work together or not.
+              Every demo comes with a free audit of your brand&apos;s AI
+              visibility. Yours to keep, whether you hire us or not.
             </motion.p>
 
             <motion.div

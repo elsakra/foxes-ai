@@ -8,12 +8,12 @@ import { Check } from "lucide-react";
 import { BOOKING_URL } from "@/lib/copy";
 
 const ITEMS = [
-  "Every question your buyers are typing into ChatGPT, Claude, Perplexity, Gemini, and Copilot about your category",
-  "How often you're named across all five, broken down by early-stage vs late-stage buyer questions",
-  "Your top 5 competitors' mention rates — who's winning, where, and why",
-  "The exact sources each model is pulling from in your category (Reddit, G2, comparison pages, YouTube, niche publications — it varies wildly)",
-  "A short list of fixes, ranked by impact and effort",
-  "The first three pieces of content we'd ship in the first 30 days",
+  "The real questions your buyers are asking AI about your category",
+  "How often you get named (and how often your competitors do)",
+  "Which competitors are winning and why",
+  "Where AI is pulling its answers from in your space",
+  "What to fix first",
+  "The first three things we'd do to get you named more",
 ];
 
 export function Offer() {
@@ -48,14 +48,14 @@ export function Offer() {
                 transition={{ duration: 0.6 }}
                 className="headline mt-3 text-[30px] sm:text-[40px] md:text-[48px] leading-[1.05] tracking-tight"
               >
-                The audit we charge paid clients for — <span className="text-[#B84700]">yours free</span>.
+                Get a <span className="text-[#B84700]">free</span> audit of
+                your brand&apos;s AI visibility.
               </motion.h2>
 
               <p className="mt-5 text-[15.5px] leading-relaxed text-black/75 max-w-xl">
-                Before every demo, we run a full audit of your AI visibility.
-                It&apos;s the same report we give paid clients at kickoff. On
-                the call, we walk you through it live. You leave with the full
-                thing.
+                Book a demo and we&apos;ll run a full audit of your brand before
+                the call. It&apos;s the same report our paying clients get. We
+                walk you through it on the call. You keep it.
               </p>
 
               <div className="mt-8 mono text-[11px] tracking-widest text-black/55 uppercase">
@@ -86,12 +86,11 @@ export function Offer() {
                   Why free
                 </div>
                 <p className="mt-2 text-[13.5px] text-black/75 leading-relaxed">
-                  Because pitching from a template is useless, and doing real
-                  work upfront is the best filter we have for the clients we
-                  want. Some of the brands we audit hire us. Some take the
-                  report and execute in-house. Some walk away. Every one of
-                  them leaves with more insight into their AI visibility than
-                  99% of their competitors will ever have.
+                  We&apos;d rather show you real work on your brand than pitch
+                  from a deck. Some people we audit hire us. Some take the report
+                  and run with it themselves. Either way, you walk away with
+                  more insight into your AI visibility than almost any of your
+                  competitors.
                 </p>
               </div>
 

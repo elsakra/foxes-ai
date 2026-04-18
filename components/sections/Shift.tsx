@@ -21,33 +21,27 @@ export function Shift() {
           <div className="lg:col-span-5">
             <Eyebrow>Why this matters now</Eyebrow>
             <h2 className="headline mt-4 text-[28px] sm:text-[36px] md:text-[42px] leading-[1.08] tracking-tight">
-              The brands that figured out SEO in 2005 owned a decade. Showing
-              up in AI answers is the same kind of moment.
+              The brands that figured out Google in 2005 owned a decade. AI is
+              the same moment.
             </h2>
           </div>
           <div className="lg:col-span-7">
             <div className="space-y-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)]">
               <p>
-                Every few years the layer between your buyer and their decision
-                shifts. Search engines. Review sites. Social. Now, generative
-                AI.
+                Every few years, the way buyers find brands changes. First it
+                was Google. Then review sites. Then social. Now it&apos;s AI.
               </p>
               <p>
-                Each shift rewards the brands that invest early and become the
-                default answer. Each one punishes the ones waiting for it to
-                &ldquo;feel real&rdquo; first.
+                Every time, the brands that move early become the default. The
+                ones that wait get stuck playing catch-up for years.
               </p>
               <p className="text-[color:var(--ink)]">
-                AI answers aren&apos;t random. Models lean on a relatively
-                stable set of signals — sources they&apos;ve seen cited,
-                formats they&apos;ve been trained to trust, platforms
-                they&apos;ve been taught to weight. Once a brand gets baked
-                into those signals for a category, they keep getting named.
-                The compounding advantage starts the day you begin.
+                AI has its favorites. Once it learns to recommend a brand in
+                your category, it keeps recommending them. The longer you
+                wait, the harder it gets to break in.
               </p>
               <p>
-                We build that compounding advantage for our clients. Starting
-                right now beats starting in six months.
+                We get you in. Starting now beats starting in six months.
               </p>
             </div>
 

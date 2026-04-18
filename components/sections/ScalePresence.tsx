@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 const CAPS = [
   {
     title: "Buyer questions, mapped",
-    body: "We turn your category into the real questions your buyers type into AI — not keyword lists from an SEO tool.",
+    body: "We find the real questions your buyers are asking AI — not the keyword lists an SEO tool would spit out.",
     icon: Search,
     className: "lg:col-span-3 lg:row-span-2",
     big: true,
@@ -44,19 +44,19 @@ const CAPS = [
   },
   {
     title: "Authority building",
-    body: "Reviews, placements, podcasts, expert roundups — the sources AI trusts.",
+    body: "We get you into the places AI trusts — reviews, podcasts, industry sites, expert roundups.",
     icon: Link2,
     className: "lg:col-span-3",
   },
   {
     title: "Site setup for AI",
-    body: "Schema, structured data, and making sure AI crawlers can read your site.",
+    body: "We make sure AI can actually read and understand your website.",
     icon: Cpu,
     className: "lg:col-span-3",
   },
   {
     title: "Weekly reporting",
-    body: "One honest number: are you showing up more often?",
+    body: "Every week, one number: are you getting named more often?",
     icon: LineChart,
     className: "lg:col-span-3",
   },
@@ -73,15 +73,13 @@ export function ScalePresence() {
               Scale your AI visibility. Not your headcount.
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)]">
-              Doing this in-house means hiring a senior strategist, a research
-              analyst, two writers, a technical SEO for the behind-the-scenes
-              site setup, and buying a measurement tool. Six months before you
-              ship the first thing.
+              Doing this yourself means hiring a strategist, a researcher, two
+              writers, and a technical SEO — and buying tracking software.
+              That&apos;s six months before you publish anything.
               <br />
               <br />
-              Or you book a demo with us and we run all of it. Senior-led team,
-              tracking already live, content engine humming, weekly report in
-              your inbox. No ramp.
+              Or you book a demo with us. We already have the team, the
+              tracking, and the process. You get a weekly report. We do the work.
             </p>
           </div>
           <LinkButton

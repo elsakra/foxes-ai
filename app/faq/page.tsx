@@ -47,11 +47,11 @@ export const SECTIONS = [
     items: [
       {
         q: "How is this different from SEO?",
-        a: "Different channel, different signals, different content. SEO optimizes for Google's ranking to win blue links. We optimize for what ChatGPT, Claude, Perplexity, Gemini, and Copilot cite when they answer. There's some overlap (good content helps both), but the formats that win AI answers — comparison pages, Reddit threads, specific answer-shaped content — aren't the same as what wins SEO.",
+        a: "SEO gets you ranked on Google. We get you named by ChatGPT, Claude, Perplexity, Gemini, and Copilot. They're different games with different rules, and what wins one doesn't always win the other.",
       },
       {
         q: "How is this different from software for this?",
-        a: "Software gives you a dashboard and a to-do list. We do the work. Most teams that buy one of these tools end up with the same outcome: someone logs in, sees a pile of gaps, feels overwhelmed, and stops logging in. The tool is one part of the job; we run all of it.",
+        a: "Software shows you the problem. We solve it. Most teams buy an AEO tool, log in once, see a giant to-do list, and never log back in. We handle the tracking and do the work.",
       },
       {
         q: "Do you work with our existing SEO, content, or PR agency?",

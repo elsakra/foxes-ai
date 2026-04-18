@@ -31,20 +31,18 @@ export function Stakes() {
           AI is the new shortlist.
           <br />
           <span className="text-[color:var(--ink-dim)]">
-            Brands that aren&apos;t in the answer don&apos;t make it.
+            If you&apos;re not named, you&apos;re not in the running.
           </span>
         </motion.h2>
 
         <div className="mt-10 max-w-2xl mx-auto text-center text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] px-2">
-          ChatGPT recommends a vendor. Claude suggests three competitors.
-          Perplexity cites a comparison article your category leader wrote.
-          Gemini names the company that sponsored the right Reddit thread six
-          months ago.
+          Your buyers are asking ChatGPT, Claude, and Perplexity who to buy
+          from. The AI gives them three names. If yours isn&apos;t one of them,
+          you never hear about the deal.
           <br />
           <br />
-          This is happening every day, at scale, for every question your buyers
-          ask. Most brands have no idea whether they&apos;re in the answer or
-          not — and most will find out too late.
+          It&apos;s happening thousands of times a day in your category. Most
+          brands have no idea if they&apos;re being recommended or skipped.
         </div>
 
         <div className="mt-10 flex justify-center px-4">

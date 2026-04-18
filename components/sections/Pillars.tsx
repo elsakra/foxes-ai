@@ -19,12 +19,12 @@ export function Pillars() {
         <div className="max-w-3xl">
           <Eyebrow>End-to-end, done for you</Eyebrow>
           <h2 className="headline mt-4 text-[30px] sm:text-[40px] md:text-[46px] leading-[1.05] tracking-tight">
-            Own the AI answer. We handle every surface.
+            We get your brand into AI answers. You don&apos;t lift a finger.
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-xl">
-            Getting named by AI isn&apos;t one thing. It&apos;s content the
-            models cite, platforms they trust, signals they read, and a weekly
-            check that shows what&apos;s working. We run all of it.
+            There&apos;s no single trick to getting named by ChatGPT or Claude.
+            It takes the right content, on the right sites, tracked every week.
+            We do all of it for you.
           </p>
         </div>
 

@@ -9,7 +9,7 @@ export const QS = [
   },
   {
     q: "How is this different from software for this?",
-    a: "Tools tell you what's wrong. We actually fix it. Most tools end up with someone on your team logging in, seeing a long to-do list, feeling overwhelmed, and never logging in again. We run the tracking and produce the content.",
+    a: "Software shows you the problem. We solve it. Most teams buy an AEO tool, log in once, see a giant to-do list, and never log back in. We handle the tracking and do the work.",
   },
   {
     q: "How quickly do results show?",
@@ -17,7 +17,7 @@ export const QS = [
   },
   {
     q: "How is this different from SEO?",
-    a: "Different channel, different signals, different formats. SEO optimizes for Google's ranking. We optimize for what ChatGPT, Claude, Perplexity, Gemini, and Copilot cite when they answer. Some overlap, but the wins come from different work.",
+    a: "SEO gets you ranked on Google. We get you named by ChatGPT, Claude, Perplexity, Gemini, and Copilot. They're different games with different rules, and what wins one doesn't always win the other.",
   },
 ];
 
