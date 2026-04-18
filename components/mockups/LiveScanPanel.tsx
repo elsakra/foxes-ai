@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { MockWindow } from "./MockWindow";
 import { ModelIcon } from "./ModelIcon";
 import { MODELS, type ModelId } from "@/lib/copy";
@@ -73,12 +73,15 @@ export function LiveScanPanel({
   autoplayMs?: number;
 }) {
   const [i, setI] = React.useState(0);
+  /** Increments every tick so `key` never matches a prior slide (fixes i wrapping 4→0 reusing DOM). */
+  const [slideKey, setSlideKey] = React.useState(0);
 
   React.useEffect(() => {
-    const id = setInterval(() => {
+    const id = window.setInterval(() => {
       setI((v) => (v + 1) % STEPS.length);
+      setSlideKey((k) => k + 1);
     }, autoplayMs);
-    return () => clearInterval(id);
+    return () => window.clearInterval(id);
   }, [autoplayMs]);
 
   // Derive mention rate deterministically from the step index so the bar
@@ -138,8 +141,7 @@ export function LiveScanPanel({
                   </span>
                   <span className="truncate">{m.name}</span>
                   {active && (
-                    <motion.span
-                      layoutId="scan-active-dot"
+                    <span
                       className="ml-auto h-1.5 w-1.5 rounded-full"
                       style={{ background: m.color }}
                     />
@@ -178,15 +180,14 @@ export function LiveScanPanel({
 
           {/* Center: query + answer */}
           <div className="col-span-8 sm:col-span-9 p-4 sm:p-6 flex flex-col min-h-[500px] sm:min-h-[480px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="flex flex-col flex-1 min-h-0"
-              >
+            {/* key + motion without AnimatePresence mode=wait — avoids exit blocking the next step */}
+            <motion.div
+              key={slideKey}
+              initial={{ opacity: 0.35 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col flex-1 min-h-0"
+            >
                 <div className="flex items-center justify-between gap-2 shrink-0">
                   <div className="flex items-center gap-2 text-[color:var(--ink-dim)]">
                     <Sparkles className="h-3.5 w-3.5 text-[--accent]" />
@@ -268,8 +269,7 @@ export function LiveScanPanel({
                     Open report <ArrowUpRight className="h-3 w-3" />
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+            </motion.div>
           </div>
         </div>
       </MockWindow>
