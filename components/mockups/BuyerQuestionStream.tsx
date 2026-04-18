@@ -5,18 +5,18 @@ import { ModelIcon } from "./ModelIcon";
 import { cn } from "@/lib/utils";
 
 const QUESTIONS = [
-  { q: "best AEO agency 2026", model: "chatgpt" },
-  { q: "how do I get ChatGPT to recommend my brand?", model: "claude" },
-  { q: "cheapest place to buy supplements online", model: "perplexity" },
-  { q: "which CRM is best for Series B startups?", model: "chatgpt" },
-  { q: "returns platform with best buyer protection", model: "gemini" },
-  { q: "top AI-moderated user research tools", model: "copilot" },
-  { q: "Notion vs Linear vs Attio for a modern GTM team", model: "claude" },
-  { q: "most cited supplement brands on the internet", model: "perplexity" },
-  { q: "best tools to build internal dashboards fast", model: "chatgpt" },
-  { q: "AI-native platforms that track share of voice", model: "gemini" },
-  { q: "who manufactures their own supplements in the US", model: "claude" },
-  { q: "what is answer engine optimization", model: "copilot" },
+  { q: "what's the best CRM for a small business?", model: "chatgpt" },
+  { q: "best pediatric dentist in Austin?", model: "claude" },
+  { q: "workplace training on burnout for employees", model: "perplexity" },
+  { q: "best protein powder for women over 40", model: "gemini" },
+  { q: "best commercial HVAC in Phoenix", model: "copilot" },
+  { q: "affordable meal kit delivery for families", model: "chatgpt" },
+  { q: "how to choose a local financial advisor", model: "claude" },
+  { q: "reliable roof repair companies near me", model: "perplexity" },
+  { q: "best running shoes for flat feet", model: "gemini" },
+  { q: "dog trainer for anxious dogs", model: "copilot" },
+  { q: "car insurance for new drivers under 25", model: "chatgpt" },
+  { q: "best wedding venues under $10k", model: "claude" },
 ] as const;
 
 export function BuyerQuestionStream({ className }: { className?: string }) {

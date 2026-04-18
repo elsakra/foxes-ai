@@ -7,23 +7,23 @@ const COLUMNS = [
   {
     title: "Drafting",
     items: [
-      { t: "Northwind vs. Competitor X — comparison page", tag: "Comparison" },
-      { t: "How to choose a Series B CRM", tag: "Guide" },
+      { t: "You vs. local competitors — comparison page", tag: "Comparison" },
+      { t: "How to choose a CRM for a small team", tag: "Guide" },
     ],
   },
   {
     title: "Review",
     items: [
-      { t: "GMP-certified manufacturing · authority brief", tag: "Authority" },
-      { t: "Best AI-native analytics platforms 2026", tag: "Category" },
+      { t: "Wellness & training programs · authority brief", tag: "Authority" },
+      { t: "Top customer questions in your category", tag: "Category" },
     ],
   },
   {
     title: "Shipped",
     items: [
-      { t: "Reddit: deep-dive in r/ProductManagement", tag: "Earned" },
-      { t: "G2 category definition · updated", tag: "Citation" },
-      { t: "Docs: 'Is Northwind GMP certified?'", tag: "FAQ" },
+      { t: "Reddit: helpful reply in r/smallbusiness", tag: "Earned" },
+      { t: "G2 profile · refreshed", tag: "Citation" },
+      { t: "FAQ: What areas do you serve?", tag: "FAQ" },
     ],
   },
 ] as const;

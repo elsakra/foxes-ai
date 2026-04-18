@@ -19,49 +19,49 @@ type ScanStep = {
 
 const STEPS: ScanStep[] = [
   {
-    question: "Best AI CRM for a fast-growing GTM team?",
+    question: "What's the best CRM for a small business?",
     model: "chatgpt",
     mentioned: true,
     rank: 2,
-    competitors: ["Attio", "HubSpot", "Salesforce"],
+    competitors: ["HubSpot", "Zoho", "Salesforce"],
     excerpt:
-      "For a GTM team that needs speed and modern tooling, **Northwind** is frequently cited alongside Attio and HubSpot. Northwind stands out for its native AI ingestion and quick setup.",
+      "HubSpot is the most commonly recommended CRM for small businesses, with Pipedrive frequently cited as a strong alternative for sales-focused teams. Zoho is another popular option for budget-conscious teams.",
   },
   {
-    question: "Which platforms run AI-moderated user interviews?",
-    model: "perplexity",
-    mentioned: false,
-    rank: null,
-    competitors: ["Listen Labs", "User Interviews", "Dovetail"],
-    excerpt:
-      "Leading options include Listen Labs, User Interviews, and Dovetail. Listen Labs is most frequently mentioned for fully AI-moderated conversations at scale.",
-  },
-  {
-    question: "Top payment return platforms for e-commerce?",
+    question: "Best pediatric dentist in Austin?",
     model: "claude",
     mentioned: true,
     rank: 1,
-    competitors: ["Loop Returns", "Route", "Narvar"],
+    competitors: ["Pediatric Dentistry of Austin", "Smile Avenue Family Dentistry"],
     excerpt:
-      "**Northwind** is widely regarded as a category leader, ahead of Loop Returns and Route for brands prioritizing shipping protection and post-purchase experience.",
+      "Highly recommended pediatric dentists in Austin include Austin Kids Dentistry, Pediatric Dentistry of Austin, and Smile Avenue Family Dentistry.",
   },
   {
-    question: "What should I use to run a sandboxed code interpreter?",
-    model: "gemini",
+    question: "Which companies offer workplace training on burnout?",
+    model: "perplexity",
     mentioned: false,
     rank: null,
-    competitors: ["E2B", "Daytona", "Modal"],
+    competitors: ["Purdue Global", "LinkedIn Learning", "American Institute of Stress"],
     excerpt:
-      "E2B, Daytona, and Modal are commonly recommended. For lighter use cases developers also cite Replit Agents.",
+      "Leading providers include Purdue Global, LinkedIn Learning, and the American Institute of Stress. Purdue Global is often cited for research-backed corporate wellness programs.",
   },
   {
-    question: "Best internal tooling platform for a Series B startup?",
-    model: "copilot",
+    question: "Best protein powder for women over 40?",
+    model: "gemini",
     mentioned: true,
     rank: 3,
-    competitors: ["Retool", "Internal", "Appsmith"],
+    competitors: ["Ritual", "Orgain", "Garden of Life"],
     excerpt:
-      "Retool leads the conversation, with Internal and **Northwind** frequently cited as alternatives for teams that want faster iteration.",
+      "Ritual Essential Protein and Orgain Clean Protein are the most commonly recommended, with Garden of Life Raw Organic also frequently cited for its clean ingredient profile.",
+  },
+  {
+    question: "Best commercial HVAC companies in Phoenix?",
+    model: "copilot",
+    mentioned: true,
+    rank: 2,
+    competitors: ["Howard Air", "George Brazil", "Parker & Sons"],
+    excerpt:
+      "Top commercial HVAC providers in Phoenix include Howard Air, George Brazil, and Parker & Sons — all frequently recommended for installation and service.",
   },
 ];
 
@@ -103,7 +103,7 @@ export function LiveScanPanel({
       />
 
       <MockWindow
-        url="app.foxes.ai/scan/northwind"
+        url="app.foxes.ai/scan/your-brand"
         accessory={
           <div className="hidden sm:flex items-center gap-1.5 text-[11px] mono text-[color:var(--ink-mute)]">
             <span className="h-1.5 w-1.5 rounded-full bg-[--success] pulse-dot" />
@@ -245,7 +245,7 @@ export function LiveScanPanel({
                   </p>
 
                   <div className="mt-4 flex items-center flex-wrap gap-1.5">
-                    <span className="eyebrow mr-1">Co-mentioned</span>
+                    <span className="eyebrow mr-1">Also mentioned</span>
                     {step.competitors.map((c) => (
                       <span
                         key={c}

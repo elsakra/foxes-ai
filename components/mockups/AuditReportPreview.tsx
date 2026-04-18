@@ -219,12 +219,12 @@ function Diagnosis() {
 
 function GapList() {
   const rows: [string, string, string][] = [
-    ["Best AI CRM for Series B", "Critical", "Attio, HubSpot, Salesforce"],
-    ["Where to buy GMP supplements", "Critical", "Vitacost, iHerb, NOW"],
-    ["Usability testing platforms", "High", "Maze, UserTesting"],
-    ["AI-moderated user interviews", "High", "Listen Labs"],
-    ["Fastest internal tooling builder", "Medium", "Retool, Internal"],
-    ["Modern post-purchase platforms", "Medium", "Loop, Route"],
+    ["Best CRM for a small business", "Critical", "HubSpot, Pipedrive, Zoho"],
+    ["Best pediatric dentist in Austin", "Critical", "Austin Kids Dentistry, others"],
+    ["Workplace training on burnout", "High", "Purdue Global, LinkedIn Learning"],
+    ["Best protein powder for women 40+", "High", "Ritual, Orgain, Garden of Life"],
+    ["Commercial HVAC companies Phoenix", "Medium", "Howard Air, George Brazil"],
+    ["Affordable meal kit delivery", "Medium", "HelloFresh, Factor, Blue Apron"],
   ];
   return (
     <div>

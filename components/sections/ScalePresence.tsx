@@ -131,10 +131,10 @@ export function ScalePresence() {
                   <div className="eyebrow mb-2">Sample prompts we map</div>
                   <ul className="space-y-1.5">
                     {[
-                      "best AI CRM for Series B startups",
-                      "cheapest place to buy GMP supplements",
-                      "usability testing platform 2026",
-                      "how do I run a sandboxed code interpreter",
+                      "what's the best CRM for a small business",
+                      "best pediatric dentist in Austin",
+                      "which companies offer workplace training on burnout",
+                      "best protein powder for women over 40",
                     ].map((t) => (
                       <li
                         key={t}
