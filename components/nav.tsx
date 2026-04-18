@@ -9,7 +9,7 @@ import { Logo } from "@/components/ui/logo";
 import { BOOKING_URL } from "@/lib/copy";
 
 const links = [
-  { href: "/platform", label: "Platform" },
+  { href: "/platform", label: "What we do" },
   { href: "/solutions", label: "Solutions" },
   { href: "/results", label: "Results" },
   { href: "/resources", label: "Resources" },
@@ -58,7 +58,7 @@ export function Nav() {
               href="/demo"
               className="hidden sm:inline text-[13.5px] text-[color:var(--ink-dim)] hover:text-[color:var(--ink)] px-3 py-2"
             >
-              Sign in
+              Client login
             </Link>
             <LinkButton href={BOOKING_URL} variant="primary" size="sm" arrow>
               Book a demo

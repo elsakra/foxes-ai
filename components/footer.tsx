@@ -4,13 +4,13 @@ import { BOOKING_URL } from "@/lib/copy";
 
 const cols = [
   {
-    title: "Platform",
+    title: "What we do",
     links: [
       { label: "How it works", href: "/platform" },
-      { label: "Measurement", href: "/platform#measurement" },
-      { label: "Content", href: "/platform#content" },
-      { label: "Authority", href: "/platform#authority" },
-      { label: "Reporting", href: "/platform#reporting" },
+      { label: "Weekly AI tracking", href: "/platform#measurement" },
+      { label: "Writing & content", href: "/platform#content" },
+      { label: "Trust & authority", href: "/platform#authority" },
+      { label: "Your weekly report", href: "/platform#reporting" },
     ],
   },
   {
@@ -61,7 +61,10 @@ export function Footer() {
             <Logo />
             <p className="mt-4 max-w-sm text-sm text-[color:var(--ink-dim)] leading-relaxed">
               The AEO agency that gets your brand named by ChatGPT, Claude,
-              Perplexity, Gemini, and Copilot.
+              Perplexity, Gemini, and Copilot.{" "}
+              <span className="text-[color:var(--ink)]">
+                We do the work. No software to log into.
+              </span>
             </p>
             <div className="mt-6 flex items-center gap-2">
               <Link

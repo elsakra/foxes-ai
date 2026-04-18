@@ -106,11 +106,11 @@ export function LiveScanPanel({
       />
 
       <MockWindow
-        url="app.foxes.ai/scan/your-brand"
+        url="Your weekly client report · sample"
         accessory={
           <div className="hidden sm:flex items-center gap-1.5 text-[11px] mono text-[color:var(--ink-mute)]">
             <span className="h-1.5 w-1.5 rounded-full bg-[--success] pulse-dot" />
-            Live
+            Sample
           </div>
         }
       >

@@ -4,12 +4,12 @@ import { ArrowRight } from "lucide-react";
 
 export const QS = [
   {
-    q: "Is there really no catch with the free audit?",
-    a: "No catch. We'd rather show you real work on your brand than try to sell you. You keep the report either way.",
+    q: "Wait — are you software or an agency?",
+    a: "We're an agency. You hire us and our team does the work — researching, writing, publishing, tracking, reporting. There's no software for you to learn, no dashboard to log into. You just get a weekly report in your inbox and review the content we produce before it goes live.",
   },
   {
-    q: "How is this different from software for this?",
-    a: "Software shows you what's wrong. We fix it. Most people buy one of these tools, log in once, see a huge to-do list, and never log back in. We actually do the work.",
+    q: "Is there really no catch with the free audit?",
+    a: "No catch. We'd rather show you real work on your brand than try to sell you. You keep the report either way.",
   },
   {
     q: "How quickly do results show?",

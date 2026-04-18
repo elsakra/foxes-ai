@@ -47,7 +47,7 @@ export function FinalCTA() {
               size="lg"
               className="w-full sm:w-auto justify-center"
             >
-              See how it works
+              See how we work
             </LinkButton>
           </div>
           <p className="mt-5 text-[12.5px] text-[color:var(--ink-mute)]">

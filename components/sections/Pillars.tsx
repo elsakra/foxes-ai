@@ -19,22 +19,23 @@ export function Pillars() {
         <div className="max-w-3xl">
           <Eyebrow>End-to-end, done for you</Eyebrow>
           <h2 className="headline mt-4 text-[30px] sm:text-[40px] md:text-[46px] leading-[1.05] tracking-tight">
-            We do the work. Your brand gets named more.
+            Our team does the work. Your brand gets named more.
           </h2>
           <p className="mt-5 text-[15.5px] leading-relaxed text-[color:var(--ink-dim)] max-w-xl">
-            Getting AI to recommend you isn&apos;t one thing. It takes the right
-            kind of content, in the right places online, and someone checking
-            every week to see what&apos;s working. We handle all of it.
+            Getting AI to recommend you takes the right content, in the right
+            places online, with someone tracking it every week. You hire our team
+            and we handle all of it — writing, publishing, tracking, reporting.
+            You just review the work before it goes live.
           </p>
         </div>
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-6 gap-4">
-          {/* Measurement — wide tile */}
+          {/* 01 + 02 — top row */}
           <PillarCard
-            title="Measurement"
+            title="We track every major AI every week"
             eyebrow="01"
             body="Every week, we ask ChatGPT, Claude, Perplexity, Gemini, and Copilot the same questions your customers ask them. Then we see who gets named — you or your competitors."
-            className="lg:col-span-4"
+            className="lg:col-span-3"
             accent
           >
             <div className="mt-6 rounded-xl border border-[color:var(--line)] bg-black/20 p-4">
@@ -42,12 +43,23 @@ export function Pillars() {
             </div>
           </PillarCard>
 
-          {/* Authority */}
           <PillarCard
-            title="Authority"
+            title="We write what AI reads"
+            eyebrow="02"
+            body="We write the comparison pages, blog posts, help docs, Reddit replies, and YouTube scripts that AI looks at when it&apos;s deciding who to recommend. You review everything before it goes live."
+            className="lg:col-span-3"
+          >
+            <div className="mt-6">
+              <ContentPipelineBoard />
+            </div>
+          </PillarCard>
+
+          {/* 03 + 04 — bottom row */}
+          <PillarCard
+            title="We get you on trusted sites"
             eyebrow="03"
             body="AI trusts certain sites more than others — G2, Capterra, big industry blogs, popular podcasts. We get your brand onto those sites so AI has good reasons to recommend you."
-            className="lg:col-span-2"
+            className="lg:col-span-3"
           >
             <div className="mt-6 space-y-2">
               {[
@@ -68,21 +80,8 @@ export function Pillars() {
             </div>
           </PillarCard>
 
-          {/* Content */}
           <PillarCard
-            title="Content"
-            eyebrow="02"
-            body="We write the comparison pages, blog posts, help docs, Reddit replies, and YouTube scripts that AI looks at when it&apos;s deciding who to recommend. You review everything before it goes live."
-            className="lg:col-span-3"
-          >
-            <div className="mt-6">
-              <ContentPipelineBoard />
-            </div>
-          </PillarCard>
-
-          {/* Reporting */}
-          <PillarCard
-            title="Reporting"
+            title="We send you a clear weekly update"
             eyebrow="04"
             body="Every week, we send you one number: how often AI named your brand this week vs. last week. When it&apos;s up, we tell you why. When it&apos;s flat, we tell you that too."
             className="lg:col-span-3"
@@ -99,7 +98,7 @@ export function Pillars() {
             Book a demo
           </LinkButton>
           <LinkButton href="/platform" variant="ghost" size="md">
-            Explore the platform →
+            See how we work →
           </LinkButton>
           <div className="ml-auto flex items-center gap-2 text-[11.5px] mono text-[color:var(--ink-mute)]">
             <span className="mr-1">Running across</span>

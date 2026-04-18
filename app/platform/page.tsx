@@ -12,12 +12,12 @@ import { ModelIcon } from "@/components/mockups/ModelIcon";
 import { cn } from "@/lib/utils";
 
 export const metadata = {
-  title: "Platform · How it works",
+  title: "What we do · How it works",
   description:
     "Four tracks. One repeating loop. Your name, showing up more often in AI answers.",
   alternates: { canonical: "/platform" },
   openGraph: {
-    title: "Platform · How it works | Foxes.ai",
+    title: "What we do · How it works | Foxes.ai",
     description:
       "Four tracks. One repeating loop. Your name, showing up more often in AI answers.",
     url: "/platform",

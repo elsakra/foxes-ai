@@ -22,6 +22,15 @@ export const metadata = {
 
 export const SECTIONS = [
   {
+    heading: "First things first",
+    items: [
+      {
+        q: "Wait — are you software or an agency?",
+        a: "We're an agency. You hire us and our team does the work — researching, writing, publishing, tracking, reporting. There's no software for you to learn, no dashboard to log into. You just get a weekly report in your inbox and review the content we produce before it goes live.",
+      },
+    ],
+  },
+  {
     heading: "About the audit and the demo",
     items: [
       {
@@ -48,10 +57,6 @@ export const SECTIONS = [
       {
         q: "How is this different from SEO?",
         a: "SEO gets you ranked on Google. We get you recommended by ChatGPT, Claude, Perplexity, Gemini, and Copilot. They're two different games, and what works for one doesn't always work for the other.",
-      },
-      {
-        q: "How is this different from software for this?",
-        a: "Software shows you what's wrong. We fix it. Most people buy one of these tools, log in once, see a huge to-do list, and never log back in. We actually do the work.",
       },
       {
         q: "Do you work with our existing SEO, content, or PR agency?",

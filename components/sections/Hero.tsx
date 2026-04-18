@@ -52,7 +52,10 @@ export function Hero() {
               If AI doesn&apos;t name you, they buy from someone else.
               <br />
               <br />
-              We get your brand named in those answers.
+              <span className="text-[color:var(--ink)]">
+                We&apos;re the agency that does the work to get your brand named
+                in those answers. You don&apos;t lift a finger.
+              </span>
             </motion.p>
 
             <motion.div
@@ -76,15 +79,26 @@ export function Hero() {
                 size="lg"
                 className="w-full sm:w-auto justify-center"
               >
-                See how it works
+                See how we work
               </LinkButton>
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.24 }}
+              className="mt-5 text-[13px] sm:text-[14px] leading-snug text-[color:var(--ink)] max-w-xl font-medium"
+            >
+              We&apos;re an agency. You hire us and we do all the work. No
+              software to learn. No dashboards to log into. Just a weekly report
+              in your inbox.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.28 }}
-              className="mt-5 text-[12.5px] text-[color:var(--ink-mute)] max-w-lg"
+              className="mt-3 text-[12.5px] text-[color:var(--ink-mute)] max-w-lg"
             >
               Book a demo and we&apos;ll send you a free report showing how often
               AI recommends your brand. Yours to keep.
@@ -117,9 +131,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1 }}
-            className="lg:col-span-6"
+            className="lg:col-span-6 w-full"
           >
-            <LiveScanPanel />
+            <div>
+              <LiveScanPanel />
+              <p className="mt-3 text-center text-[12px] sm:text-[13px] leading-relaxed text-[color:var(--ink-mute)] px-2 max-w-md mx-auto">
+                A sample of the weekly report we send clients — not software you
+                log into. It lands in your inbox; we do everything behind the
+                scenes.
+              </p>
+            </div>
           </motion.div>
         </div>
       </Container>
